@@ -186,6 +186,79 @@ select{padding:5px 8px;border-radius:7px;border:1px solid var(--line);background
 #gtbody .node,#anbody .node{line-height:1.5}
 @media (max-width:600px){.kvrow .lbl,.kvx{display:none}.kv{padding:6px 10px}}
 @media (max-width:600px){ .sub.on,.sub2.on{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none} .sub.on::-webkit-scrollbar{display:none} .lt{white-space:nowrap;flex:0 0 auto} #stick .tabs{padding:4px 8px 0} .tab{padding:8px 11px;font-size:14px} header p{font-size:11.5px} .chip{white-space:nowrap;flex:0 0 auto} body{font-size:14.5px} .tree ul{margin-left:6px;padding-left:10px} .tree ul>li::before{left:-12px;width:10px} header h1{font-size:17px} }
+/* ---- TAB 🎮 Game (bản 11) ---- */
+.gp{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:6px 12px;font-size:13.5px;font-weight:700;cursor:pointer;white-space:nowrap;flex:0 0 auto}
+.gp.on{background:var(--brand2);color:#fff;border-color:var(--brand2)}
+@media (prefers-color-scheme: dark){.gp.on{color:#0c2233}}
+.kw:disabled{opacity:.4;cursor:default}
+.gm-hint{font-size:13px;color:var(--muted);margin:6px 0 10px}
+.gm-small{font-size:12px}
+.gm-start{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center}
+.gm-stat{font-size:13px;color:var(--muted)}
+.gm-go{border:0;background:var(--brand);color:#fff;border-radius:10px;padding:10px 18px;font-size:15px;font-weight:800;cursor:pointer}
+@media (prefers-color-scheme: dark){.gm-go{color:#0c2233}}
+.gm-go:focus-visible,.gm-opt:focus-visible,.gm-flip:focus-visible{outline:3px solid #ffb703;outline-offset:2px}
+.gm-prog{flex:1 1 100%;height:7px;border-radius:99px;background:var(--accent);border:1px solid var(--line);overflow:hidden;margin:8px 0 2px}
+.gm-prog i{display:block;height:100%;background:linear-gradient(90deg,var(--brand2),var(--g));transition:width .3s}
+.gm-hud{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.gm-hud .pill{font-size:12.5px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--accent);border:1px solid var(--line)}
+.gm-hud .pill.hot{background:var(--abg);color:var(--a);border-color:var(--a)}
+.gm-quit{margin-left:auto;padding:4px 9px}
+.gm-ctx{font-size:12px;color:var(--muted);margin:10px 0 2px}
+.gm-fq{font-weight:800;color:var(--brand);font-size:15px;margin:2px 0 6px}
+.gm-quote{font-size:16px;line-height:1.55;padding:11px 14px;border-radius:12px;background:var(--accent);border-left:5px solid var(--brand2)}
+.gm-quote.branch{border-left-color:var(--a);font-weight:700}
+.gm-quote.r{border-left-color:var(--r)}.gm-quote.a{border-left-color:var(--a)}.gm-quote.g{border-left-color:var(--g)}.gm-quote.i{border-left-color:var(--i)}
+.gm-opts{display:grid;gap:8px;margin-top:12px}
+.gm-opts.col{grid-template-columns:repeat(3,1fr)}
+.gm-opt{display:flex;gap:10px;align-items:flex-start;text-align:left;border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:10px 12px;font-size:14.5px;line-height:1.45;cursor:pointer;font-family:inherit}
+.gm-opt .k{flex:0 0 24px;height:24px;border-radius:50%;background:var(--accent);border:1px solid var(--line);font-size:12px;font-weight:800;display:grid;place-items:center;margin-top:1px}
+.gm-opt .v{flex:1;min-width:0;overflow-wrap:anywhere}
+.gm-opt:hover:not(:disabled){border-color:var(--brand2)}
+.gm-opt:disabled{cursor:default}
+.gm-opt.ok{border-color:var(--g);background:var(--gbg)}
+.gm-opt.bad{border-color:var(--r);background:var(--rbg)}
+.gm-opt.dim{opacity:.5}
+.gm-opts.col .gm-opt{justify-content:center;align-items:center;font-weight:800;font-size:15px;padding:14px 8px;text-align:center}
+.gm-opts.col .gm-opt .v{flex:0 1 auto}
+.gm-opt.cr{border-color:var(--r);color:var(--r)}.gm-opt.ca{border-color:var(--a);color:var(--a)}.gm-opt.cg{border-color:var(--g);color:var(--g)}
+.gm-opt.cr.ok,.gm-opt.cr.bad{background:var(--rbg)}.gm-opt.ca.ok,.gm-opt.ca.bad{background:var(--abg)}.gm-opt.cg.ok,.gm-opt.cg.bad{background:var(--gbg)}
+.gm-opts.col .gm-opt.ok{box-shadow:0 0 0 3px var(--g)}.gm-opts.col .gm-opt.bad{box-shadow:0 0 0 3px var(--r)}
+.gm-srcopt{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px}
+.gm-fb{margin:12px 0 6px;font-weight:800;font-size:15px}
+.gm-fb.ok{color:var(--g)}.gm-fb.bad{color:var(--r)}
+.gm-xl{font-size:13.5px;margin:4px 0}
+.gm-list{margin:4px 0;padding-left:20px;font-size:14px}
+.gm-list li{margin:4px 0}
+.gm-list li.r::marker{color:var(--r)}.gm-list li.a::marker{color:var(--a)}.gm-list li.g::marker{color:var(--g)}.gm-list li.i::marker{color:var(--i)}
+.gm-list li.me{background:var(--gbg);border-radius:6px;padding:1px 4px}
+.gm-nav{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+.gm-nav .gm-go{margin-left:auto}
+.gm-end h2{font-size:18px}
+.gm-h3{font-size:14.5px;color:var(--brand);margin:14px 0 4px}
+.gm-flip{margin-top:10px;border:2px dashed var(--line);border-radius:14px;padding:4px 12px 12px;cursor:pointer;min-height:170px;background:var(--card)}
+.gm-flip.on{border-style:solid;border-color:var(--brand2);cursor:default}
+.gm-back{border-top:1px dashed var(--line);margin-top:12px;padding-top:6px;animation:gmIn .25s ease-out}
+.gm-tap{text-align:center;color:var(--muted);font-size:12.5px;margin-top:12px}
+.gm-blank{display:inline-block;min-width:3.2em;border-bottom:2px solid var(--brand2);color:var(--brand2);font-weight:800;text-align:center}
+.gm-self{flex:1 1 140px;justify-content:center;font-weight:800}
+.gm-self .k{order:2}
+.gm-back-btn{position:fixed;right:16px;bottom:16px;z-index:40;border:0;border-radius:999px;padding:11px 16px;background:var(--brand);color:#fff;font-weight:800;font-size:14px;box-shadow:0 4px 14px rgba(0,0,0,.25);cursor:pointer}
+@media (prefers-color-scheme: dark){.gm-back-btn{color:#0c2233}}
+.gm-back-btn[hidden]{display:none}
+.gm-need{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center;font-size:14px;margin:2px 0 4px;padding:8px 12px;border-radius:10px;background:var(--abg);color:var(--ink);border-left:5px solid var(--a)}
+.gm-need b{color:var(--a);font-size:17px}
+.gm-cnt{margin-left:auto;font-weight:800;font-size:13px;color:var(--brand)}
+.gm-opt .mk{flex:0 0 auto;font-size:15px;line-height:1.3}
+.gm-opt.miss{border-color:var(--g);border-style:dashed;background:transparent}
+.gm-opt.miss .mk::after{content:"← đáp án đúng";font-size:11.5px;font-weight:700;color:var(--g);white-space:nowrap}
+.gm-opt.shake{animation:gmShake .3s}
+@keyframes gmShake{0%,100%{transform:none}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.gm-list.ok li::marker{color:var(--g)}
+.gm-list .src{margin-left:4px}
+@keyframes gmIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.gm-back,.gm-prog i,.gm-opt.shake{animation:none;transition:none}}
+@media (max-width:600px){.gm-opts.col .gm-opt{font-size:13.5px;padding:12px 4px}.gm-opts.col .gm-opt .k{display:none}.gm-quote{font-size:15px}.gp{padding:6px 10px}}
 @media print{ #stick,.tools{display:none} .panel{display:block!important} details{open:true} }
 </style>
 </head>
@@ -200,6 +273,7 @@ select{padding:5px 8px;border-radius:7px;border:1px solid var(--line);background
     <button class="tab" data-tab="ss">⚖️ So sánh PL</button>
     <button class="tab" data-tab="nn">🗣️ Ngôn ngữ</button>
     <button class="tab" data-tab="tl">🚭 Thuốc lá điện tử</button>
+    <button class="tab" data-tab="gm">🎮 Game</button>
   </nav>
   <div class="subwrap">
     <div class="sub2 on kvrow" data-for="kt"><span class="lbl">Phần:</span><button class="kv on" data-kv="main">📖 Soi chiếu &amp; XNC</button><button class="kv" data-kv="ql">🏛️ Lĩnh vực quản lý<span class="kvx"> ANHK</span></button><button class="kv" data-kv="gt">✈️ Bài học<span class="kvx"> chung</span> HK</button><button class="kv" data-kv="an">🛡️ Bài học<span class="kvx"> chung</span> ANHK</button></div>
@@ -225,6 +299,7 @@ select{padding:5px 8px;border-radius:7px;border:1px solid var(--line);background
       <button class="lt on" data-lang="vi">VI</button><button class="lt on" data-lang="en">EN</button><button class="lt on" data-lang="zh">中文</button><button class="lt on" data-lang="ko">한국어</button>
     </div>
     <div class="sub" data-for="tl" id="tlsub"></div>
+    <div class="sub2 kvrow" data-for="gm"><span class="lbl">Phần:</span><button class="gp on" data-gp="main">📖 Soi chiếu &amp; XNC</button><button class="gp" data-gp="ql">🏛️ Lĩnh vực quản lý<span class="kvx"> ANHK</span></button><button class="gp" data-gp="gt">✈️ Bài học<span class="kvx"> chung</span> HK</button><button class="gp" data-gp="an">🛡️ Bài học<span class="kvx"> chung</span> ANHK</button></div>
     <div class="where" id="where"></div>
   </div>
 </div>
@@ -261,7 +336,11 @@ select{padding:5px 8px;border-radius:7px;border:1px solid var(--line);background
 <section class="panel" id="tl">
   <div id="tlbody"></div>
 </section>
-<p class="foot">Nội dung pháp luật Việt Nam ở các tab Kiến thức (gồm cả phần 🏛️ Lĩnh vực quản lý ANHK), So sánh PL, Ngôn ngữ chỉ trích từ 6 văn bản trong thư mục, có ghi Điều/khoản; riêng tab 🚭 Thuốc lá điện tử có thêm văn bản tra web (mã VB…, ghi link). Phần nước ngoài chỉ lấy từ trang chính thức, “—” nghĩa là chưa tìm được nguồn chính thức để xác minh. Văn bản bản scan đã được nhận dạng chữ (OCR) – khi cần con số chính xác tuyệt đối, đối chiếu lại bản PDF gốc.</p>
+<section class="panel" id="gm">
+  <div id="gmbody"></div>
+</section>
+<button id="gmback" class="gm-back-btn" hidden>🎮 Về game</button>
+<p class="foot">Nội dung pháp luật Việt Nam ở các tab Kiến thức (gồm cả phần 🏛️ Lĩnh vực quản lý ANHK), So sánh PL, Ngôn ngữ chỉ trích từ 6 văn bản trong thư mục, có ghi Điều/khoản; tab 🎮 Game chỉ sinh câu hỏi từ chính nội dung tab Kiến thức (không thêm kiến thức mới); riêng tab 🚭 Thuốc lá điện tử có thêm văn bản tra web (mã VB…, ghi link). Phần nước ngoài chỉ lấy từ trang chính thức, “—” nghĩa là chưa tìm được nguồn chính thức để xác minh. Văn bản bản scan đã được nhận dạng chữ (OCR) – khi cần con số chính xác tuyệt đối, đối chiếu lại bản PDF gốc.</p>
 </main>
 <script>
 // ===== DỮ LIỆU NGÔN NGỮ =====
@@ -2967,6 +3046,757 @@ function buildAN(){
   });
 }
 
+// ===== NGÂN HÀNG CÂU HỎI NỘI DUNG cho TAB 🎮 Game (bản 12 – 01/10/2026) =====
+// Mỗi câu: nhiều đáp án đúng. Khi chơi: lấy k đáp án đúng (ngẫu nhiên) + đáp án sai sao cho tổng = 1,5 × k (làm tròn).
+// ok = đáp án ĐÚNG – chỉ chép/rút gọn từ dữ liệu sơ đồ (Danh mục kèm CV 25655, TT14, ND215, L130, 2 Luật XNC).
+// no = đáp án SAI – lấy từ vật phẩm/quy định thuộc nhóm khác trong cùng văn bản, hoặc con số/điều kiện bị đổi sai.
+// p = phần (main/ql/gt/an) · sc = phạm vi (id sơ đồ) · j = đường dẫn nút trong sơ đồ (để “Xem trong sơ đồ”) · s = căn cứ
+// all:1 = luôn hiện đủ mọi đáp án đúng · max = số đáp án đúng tối đa mỗi lượt (mặc định 6)
+
+const GMB_CABIN_OK = [ // vật phẩm ĐƯỢC mang lên khoang khách (có/không điều kiện) – dùng làm đáp án sai cho câu “cấm khoang khách”
+  'Bút la-de dùng trong giảng dạy, thuyết trình',
+  'Bình xịt dùng để sát khuẩn trên tàu bay',
+  'Pin sạc dự phòng lithium ≤ 100 Wh (mang theo người / xách tay)',
+  'Điện thoại, laptop có pin lithium ≤ 100 Wh',
+  'Đồ trang điểm, vệ sinh cá nhân dạng xịt (mỗi bình ≤ 0,5 kg / 0,5 L)',
+  'Thuốc y tế không chứa chất phóng xạ',
+  'Máy uốn tóc chứa khí hydrocarbon (01 máy, có nắp chụp)',
+  'Bóng đèn tiết kiệm năng lượng trong bao bì nhà sản xuất',
+  'Bình khí ga dùng cho chân, tay giả cơ khí'
+];
+
+const GM_BANK = [
+// ---------------- 1.2 ① HÀNH LÝ XÁCH TAY – Mục I ----------------
+{id:'m01', p:'main', sc:'s-hlxt', j:'0.1.0', s:'DM Mục I.1–2',
+ q:'Vật phẩm nào bị CẤM mang vào khu vực hạn chế, khoang hành khách (Mục I – nhóm NỔ & SÚNG)?',
+ ok:['Các loại đạn','Kíp nổ','Ngòi nổ, dây cháy chậm','Vật mô phỏng giống thiết bị nổ','Mìn, lựu đạn','Pháo hoa, pháo bông, pháo sáng, pháo hiệu','Đạn khói, quả tạo khói','Thuốc nổ, thuốc súng, chất nổ dẻo',
+     'Súng ngắn, súng trường, súng săn','Đồ chơi giống vũ khí thật (súng, bom, lựu đạn…)','Bộ phận cấu tạo của súng, kể cả ống ngắm','Súng hơi bắn bi, đạn sơn, đạn cao su','Súng bắn pháo sáng, súng hiệu lệnh','Thiết bị phóng điện (kể cả tự tạo)','Súng la-de, thiết bị phát tia la-de'],
+ no: GMB_CABIN_OK},
+{id:'m02', p:'main', sc:'s-hlxt', j:'0.1.3', s:'DM Mục I.4–6',
+ q:'Vật phẩm nào bị CẤM mang vào khoang hành khách (Mục I – nhóm SẮC NHỌN, DỤNG CỤ, VẬT ĐẦU TÙ)?',
+ ok:['Rìu, dao phay','Dao lam, dao rọc giấy','Súng cao su','Súng phóng lao','Dao găm, kiếm, cung, tên, nỏ','Chân đế máy ảnh, gậy, cán ô có đầu nhọn bịt kim loại',
+     'Xà beng, cuốc, xẻng, liềm, đục','Khoan và mũi khoan (kể cả khoan tay)','Cưa, lưỡi cưa','Đèn khò','Dụng cụ bắn vít, bắn đinh, bắn ghim',
+     'Gậy bóng chày, gậy gôn, gậy bi-a','Dùi cui cao su, kim loại, gỗ','Dụng cụ, thiết bị tập luyện võ thuật'],
+ no: GMB_CABIN_OK},
+{id:'m03', p:'main', sc:'s-hlxt', j:'0.1.2', s:'DM Mục I.3', max:5,
+ q:'Vật phẩm nào thuộc nhóm HÓA CHẤT bị cấm khoang hành khách (Mục I.3)?',
+ ok:['Bình xịt hơi cay (kể cả loại chế từ ớt, hạt tiêu)','Bình xịt a-xít','Bình xịt chống côn trùng','Khí cay, hóa chất gây tê liệt','Hóa chất khi trộn lẫn có thể gây phản ứng cháy','Hóa chất khác nguy hiểm đến tính mạng, tài sản'],
+ no:['Bình xịt dùng để sát khuẩn trên tàu bay','Keo xịt tóc, nước hoa (mỗi bình ≤ 0,5 kg / 0,5 L)','Thuốc y tế dạng xịt không chứa chất phóng xạ']},
+{id:'m04', p:'main', sc:'s-hlxt', j:'0.1', s:'DM Mục I',
+ q:'Mục I (cấm khoang khách) có 7 nhóm. Nhóm nào THUỘC Mục I?',
+ ok:['Chất nổ, chất gây cháy, nổ','Súng, vũ khí & vật giống vũ khí','Hóa chất','Vật sắc, nhọn & thiết bị phóng (bắn)','Dụng cụ lao động','Vật, dụng cụ đầu tù','Chất lỏng, chất đặc sánh, dung dịch xịt (theo hướng dẫn kiểm soát chất lỏng)'],
+ no:['Pin sạc dự phòng lithium','Bật lửa, diêm','Đồ uống có cồn','Thiết bị điện tử cầm tay','Đá khô']},
+{id:'m05', p:'main', sc:'s-hlxt', j:'0.1.3.4', s:'DM I.4.5–4.9, I.5.3–5.4', all:1,
+ q:'Ngưỡng kích thước nào ĐÚNG theo Mục I (vượt ngưỡng thì cấm khoang khách)?',
+ ok:['Dao: lưỡi (không kể cán) dài > 06 cm','Dao: tổng chiều dài cán + lưỡi > 10 cm','Kéo: lưỡi > 06 cm tính từ điểm nối hai lưỡi','Búa, cờ-lê, mỏ lết, kìm dài > 10 cm'],
+ no:['Dao: lưỡi dài > 04 cm','Kéo: tổng chiều dài cán + lưỡi > 15 cm','Búa, kìm dài > 20 cm','Tuốc-nơ-vít dài > 12 cm']},
+{id:'m06', p:'main', sc:'s-hlxt', j:'0.1.4', s:'DM I.4.9, I.5.3', all:1,
+ q:'Vật sắc nhọn / dụng cụ “khác” bị cấm khoang khách khi nào?',
+ ok:['Vật sắc, nhọn khác có thể làm hung khí, tổng chiều dài > 10 cm','Dụng cụ có lưỡi sắc / mũi nhọn dài > 06 cm, có thể dùng làm vũ khí (như tuốc-nơ-vít)'],
+ no:['Mọi vật kim loại dài > 05 cm']},
+{id:'m07', p:'main', sc:'s-hlxt', j:'0.1.1.7', s:'DM I.2.7, I.3.1', all:1,
+ q:'Vật nào là NGOẠI LỆ – được mang dù thuộc nhóm cấm của Mục I?',
+ ok:['Bút la-de dùng trong giảng dạy, thuyết trình','Bình xịt dùng để sát khuẩn trên tàu bay'],
+ no:['Súng la-de, thiết bị phát tia la-de','Bình xịt chống côn trùng','Bình xịt hơi cay chế từ ớt, hạt tiêu']},
+// ---------------- Chất lỏng ----------------
+{id:'m08', p:'main', sc:'s-hlxt', j:'0.2', s:'TT14 Đ49.1; PL XIX mục 1',
+ q:'Quy định nào ĐÚNG về chất lỏng mang theo người, xách tay trên chuyến bay QUỐC TẾ?',
+ ok:['Mỗi chai, lọ, bình ≤ 100 ml, đóng kín hoàn toàn','Tổng ≤ 01 lít / người (theo người + HLXT)','Áp dụng cho cả hành khách và thành viên tổ bay','Đựng trong túi nhựa trong suốt, kích cỡ ≤ 25 cm × 20 cm','Túi chứa không quá 10 lọ 100 ml','Miệng túi mở ra, đóng lại được để kiểm tra'],
+ no:['Mỗi chai, lọ, bình ≤ 200 ml','Tổng ≤ 02 lít / người','Chỉ áp dụng cho hành khách, không áp dụng tổ bay','Túi kích cỡ tối đa 30 cm × 30 cm','Túi chứa tối đa 20 lọ','Điều 49 áp dụng cho mọi chuyến bay nội địa']},
+{id:'m09', p:'main', sc:'s-hlxt', j:'0.2.2', s:'TT14 Đ49.2–3',
+ q:'Trường hợp nào KHÔNG bị giới hạn 100 ml / 1 lít?',
+ ok:['Thuốc chữa bệnh có đơn ghi rõ người kê đơn; tên người dùng khớp thẻ lên tàu bay','Sữa, thức ăn cho trẻ em, trẻ sơ sinh – có trẻ đi cùng','Hàng mua tại cửa hàng trong khu cách ly quốc tế, đựng trong túi STEB dán kín','Hàng mua trên chuyến bay quốc tế, đựng trong túi STEB dán kín'],
+ no:['Thuốc lỏng không có đơn thuốc','Sữa trẻ em khi KHÔNG có trẻ đi cùng','Hàng miễn thuế trong túi STEB đã bị mở niêm phong','Mỹ phẩm cao cấp còn nguyên tem nhãn','Nước uống mua ở sảnh ngoài nhà ga']},
+{id:'m10', p:'main', sc:'s-hlxt', j:'0.2.3', s:'TT14 PL XIX mục 2', max:5,
+ q:'Túi nhựa an ninh (STEB) đựng hàng miễn thuế có đặc điểm nào?',
+ ok:['Viền cạnh và đáy túi màu đỏ, rộng > 15 mm','Mặt trước có biểu tượng an ninh màu xanh lá ở giữa túi','Dòng chữ đỏ ở đáy: “Không được mở cho đến hết hành trình…”','Phía trên miệng túi: 03 chữ VNM (túi cửa hàng miễn thuế)','Có tên/mã nhà sản xuất đăng ký với ICAO + số xê-ri kiểm soát'],
+ no:['Viền cạnh và đáy màu xanh dương','Biểu tượng an ninh màu đỏ','Phía trên miệng túi in 03 chữ VIE','Viền rộng ≥ 05 mm là đủ']},
+// ---------------- Pin ----------------
+{id:'m11', p:'main', sc:'s-hlxt', j:'0.3.0', s:'DM III.17',
+ q:'Yêu cầu nào ĐÚNG với PIN SẠC DỰ PHÒNG lithium ≤ 100 Wh (Li kim loại ≤ 2 g)?',
+ ok:['KHÔNG được ký gửi','Được xách tay và mang theo người','Không cần hãng chấp thuận','Chỉ mang cho nhu cầu sử dụng cá nhân','Chống đoản mạch: bao bì gốc, dán băng cực hở, hoặc mỗi viên một túi riêng','Pin đạt thử nghiệm UN 38.3'],
+ no:['Được ký gửi nếu đã tắt nguồn','Phải được hãng chấp thuận','Chỉ được để trong hành lý ký gửi','Mỗi viên Li-ion được tới 160 Wh không cần chấp thuận']},
+{id:'m12', p:'main', sc:'s-hlxt', j:'0.3.1', s:'DM III.17',
+ q:'Yêu cầu nào ĐÚNG với pin Li-ion dự phòng 100–160 Wh?',
+ ok:['KHÔNG được ký gửi','Được xách tay và mang theo người','CẦN hãng chấp thuận','Tối đa 02 viên / hành khách','Mỗi viên phải chống đoản mạch','Đạt thử nghiệm UN 38.3'],
+ no:['Không cần hãng chấp thuận','Tối đa 04 viên / hành khách','Được ký gửi khi hãng chấp thuận','Chỉ được mang theo người, không được xách tay']},
+{id:'m13', p:'main', sc:'s-hlkg', j:'0.4.0', s:'DM III.17',
+ q:'Thiết bị điện tử cầm tay có pin lithium (điện thoại, laptop, máy ảnh) – quy định nào ĐÚNG?',
+ ok:['≤ 100 Wh: được ký gửi, không cần hãng chấp thuận','100–160 Wh: được ký gửi nhưng CẦN hãng chấp thuận','Nếu ký gửi: TẮT NGUỒN HOÀN TOÀN, không để chế độ ngủ / ngủ đông','Khuyến khích mang trong hành lý xách tay','Thiết bị có mục đích chính là cấp điện cho thiết bị khác → áp dụng như pin dự phòng (không ký gửi)'],
+ no:['Ký gửi chỉ cần để chế độ ngủ','100–160 Wh được ký gửi không cần chấp thuận','Thiết bị có pin lithium bị cấm ký gửi trong mọi trường hợp','Sạc dự phòng dạng “thiết bị” được ký gửi như điện thoại']},
+{id:'m14', p:'main', sc:'s-hlxt', j:'0.3.7', s:'DM III.6', all:1,
+ q:'Pin dự phòng cho thiết bị y tế điện tử cầm tay – quy định nào ĐÚNG?',
+ ok:['< 100 Wh: không ký gửi, được xách tay & theo người, không cần chấp thuận','100–160 Wh: không ký gửi, CẦN hãng chấp thuận, tối đa 02 viên','Dùng cho việc điều trị của hành khách, đạt UN 38.3, chống đoản mạch'],
+ no:['Được ký gửi vì là thiết bị y tế','100–160 Wh không cần hãng chấp thuận']},
+// ---------------- Bật lửa, diêm ----------------
+{id:'m15', p:'main', sc:'s-hlxt', j:'0.3.2', s:'DM III.13', all:1,
+ q:'BẬT LỬA NHỎ (loại dùng để hút thuốc) – quy định nào ĐÚNG?',
+ ok:['Chỉ được mang THEO NGƯỜI','KHÔNG được để trong hành lý xách tay','KHÔNG được ký gửi','Mỗi người 01 chiếc, chỉ cho mục đích cá nhân','Không chứa nhiên liệu lỏng chưa được thẩm thấu (trừ khí hóa lỏng)'],
+ no:['Được để trong hành lý xách tay','Mỗi người tối đa 02 chiếc','Được ký gửi nếu đã hết ga']},
+{id:'m16', p:'main', sc:'s-hlxt', j:'0.3.3', s:'DM III.13, II.8', all:1,
+ q:'DIÊM – quy định nào ĐÚNG?',
+ ok:['Bao diêm an toàn loại nhỏ: chỉ mang theo người','Mỗi người 01 bao diêm an toàn, mục đích cá nhân','Bao diêm an toàn: KHÔNG ký gửi, KHÔNG để trong HLXT','Diêm bật đâu cũng cháy: CẤM cả theo người, xách tay, ký gửi'],
+ no:['Diêm bật đâu cũng cháy: được mang theo người 01 bao','Bao diêm an toàn được ký gửi','Mỗi người được 02 bao diêm an toàn']},
+{id:'m17', p:'main', sc:'s-hlxt', j:'0.3.4', s:'DM III.13',
+ q:'BẬT LỬA DẠNG ĐÈN KHÒ / ĐÈN HÀN – quy định nào ĐÚNG?',
+ ok:['Có nắp chụp chống kích hoạt: chỉ mang theo người, 01 chiếc','Không có nắp chụp bảo vệ: CẤM hoàn toàn','Có hay không nắp chụp đều KHÔNG được ký gửi','Loại dùng pin: không được sạc thiết bị / pin dự phòng trên tàu bay','Loại dùng pin: mỗi viên Li-ion ≤ 100 Wh, Li kim loại ≤ 2 g, đạt UN 38.3'],
+ no:['Có nắp chụp thì được ký gửi','Không có nắp chụp được để trong HLXT','Được sạc pin trên tàu bay']},
+{id:'m18', p:'main', sc:'s-hlkg', j:'0.2', s:'DM III.1, 9, 10, 13, 18, 29',
+ q:'Vật phẩm nào bị CẤM HOÀN TOÀN (cả theo người, xách tay, ký gửi)?',
+ ok:['Diêm bật đâu cũng cháy','Bình nhiên liệu, bình ga dự phòng cho bật lửa','Bật lửa đèn khò KHÔNG có nắp chụp bảo vệ','Bình khí / xi lanh chứa ôxy hóa lỏng','Đồ uống có cồn > 70%','Bình khí dự phòng cho máy uốn tóc','Pin nhiên liệu chỉ dùng để sạc pin thiết bị khác','Thiết bị an ninh (va-li ngoại giao…) bị lỗi, hư hỏng'],
+ no:['Bật lửa nhỏ loại hút thuốc','Bao diêm an toàn loại nhỏ','Đồ uống có cồn 40% nguyên niêm phong','Pin sạc dự phòng ≤ 100 Wh','Máy uốn tóc chứa khí hydrocarbon','Bình khí ôxy nhỏ dùng trong y tế']},
+// ---------------- Nhiệt kế, khí áp kế ----------------
+{id:'m19', p:'main', sc:'s-hlkg', j:'0.3.0', s:'DM III.7, III.21',
+ q:'NHIỆT KẾ / KHÍ ÁP KẾ THỦY NGÂN – quy định nào ĐÚNG?',
+ ok:['Nhiệt kế y tế loại nhỏ chứa thủy ngân: CHỈ được ký gửi','Nhiệt kế y tế: mỗi người 01 chiếc, để trong hộp / vỏ bảo vệ','Khí áp kế / nhiệt kế thủy ngân (mục 21): chỉ xách tay, hãng chấp thuận + báo cơ trưởng','Mục 21 chỉ khi do đại diện Trung tâm Khí tượng Thủy văn quốc gia / cơ quan Chính phủ tương đương mang','Mục 21: bao bì ngoài chắc chắn, lớp trong bịt kín hoặc túi chống rò thủy ngân'],
+ no:['Nhiệt kế y tế thủy ngân được xách tay','Khí áp kế thủy ngân được ký gửi','Mỗi người được 02 nhiệt kế y tế thủy ngân','Mọi hành khách được mang khí áp kế thủy ngân nếu hãng chấp thuận']},
+// ---------------- Đồ uống có cồn, bình xịt ----------------
+{id:'m20', p:'main', sc:'s-hlkg', j:'0.4.1', s:'DM III.10; TT14 Đ49',
+ q:'ĐỒ UỐNG CÓ CỒN – quy định nào ĐÚNG?',
+ ok:['≤ 24% cồn: không bị hạn chế','> 24% đến 70%: bình chứa của nhà sản xuất, nguyên niêm phong & nhãn','> 24% đến 70%: mỗi bình ≤ 05 L, mỗi hành khách ≤ 05 L','> 70%: cấm theo người, xách tay và ký gửi','Chuyến quốc tế: chai trong HLXT / theo người còn chịu giới hạn 100 ml'],
+ no:['> 70% được ký gửi nếu nguyên niêm phong','> 24% đến 70%: mỗi hành khách ≤ 10 L','Đồ uống ≤ 40% không bị hạn chế','> 24% đến 70%: mỗi bình ≤ 10 L']},
+{id:'m21', p:'main', sc:'s-hlkg', j:'0.4.2', s:'DM III.3, III.8, III.11',
+ q:'Đồ trang điểm, vệ sinh cá nhân, thuốc y tế dạng xịt (III.3, III.8) và bình xịt thể thao/gia đình (III.11) – quy định nào ĐÚNG?',
+ ok:['Mỗi bình ≤ 0,5 kg hoặc 0,5 L','Tổng các mục 3, 8, 11 ≤ 2 kg hoặc 2 L / hành khách','Van xả có nắp chụp hoặc biện pháp chống rò','Đồ trang điểm, thuốc y tế: ký gửi, xách tay, theo người đều được','Bình xịt không độc, không dễ cháy dùng trong thể thao / gia đình: CHỈ ký gửi'],
+ no:['Mỗi bình ≤ 1 kg hoặc 1 L','Tổng các mục ≤ 5 kg / hành khách','Bình xịt thể thao / gia đình được xách tay','Bình xịt không cần nắp chụp van']},
+// ---------------- Theo người / chỉ ký gửi / cấm ký gửi ----------------
+{id:'m22', p:'main', sc:'s-hlkg', j:'0.3', s:'DM Mục III',
+ q:'Vật phẩm nào CHỈ được KÝ GỬI (không xách tay, không mang theo người)?',
+ ok:['Nhiệt kế y tế loại nhỏ chứa thủy ngân','Xe lăn / thiết bị hỗ trợ di chuyển chạy pin','Bình xịt không độc, không dễ cháy dùng trong thể thao, gia đình','Đạn đóng gói an toàn nhóm 1.4S (UN 0012, UN 0014)','Thiết bị an ninh (va-li ngoại giao, hộp đựng tiền có báo động) chứa hàng nguy hiểm'],
+ no:['Pin sạc dự phòng lithium','Bật lửa nhỏ','Khí áp kế thủy ngân (mục 21)','Pin nhiên liệu cho thiết bị điện tử','Đá khô bảo quản thực phẩm','Đồ trang điểm dạng xịt']},
+{id:'m23', p:'main', sc:'s-hlkg', j:'0.2', s:'DM Mục III (cột ký gửi = Không)',
+ q:'Vật phẩm nào KHÔNG được để trong HÀNH LÝ KÝ GỬI (phát hiện → hướng dẫn khách lấy ra)?',
+ ok:['Pin sạc / pin lithium dự phòng','Pin dự phòng của thiết bị y tế điện tử cầm tay','Bật lửa nhỏ','Bao diêm an toàn loại nhỏ','Pin nhiên liệu cho thiết bị điện tử cầm tay','Va-li gắn pin lithium chưa tháo pin','Khí áp kế / nhiệt kế thủy ngân loại mục 21'],
+ no:['Laptop ≤ 100 Wh đã tắt nguồn hoàn toàn','Nhiệt kế y tế loại nhỏ chứa thủy ngân','Hộp đựng nhiên liệu dự phòng cho pin nhiên liệu','Rượu 24–70% nguyên niêm phong, ≤ 05 L','Va-li đã tháo pin theo hướng dẫn nhà sản xuất','Bình xịt thể thao ≤ 0,5 kg']},
+{id:'m24', p:'main', sc:'s-hlkg', j:'0.1', s:'DM Mục II',
+ q:'Vật phẩm nào thuộc MỤC II – CẤM mang lên KHOANG HÀNG (hành lý ký gửi)?',
+ ok:['Đạn (trừ trường hợp hãng chấp nhận theo Doc 9284)','Kíp nổ','Ngòi nổ, dây cháy chậm','Mìn, lựu đạn','Các loại pháo','Đạn khói, quả tạo khói','Thuốc nổ, thuốc súng, chất nổ dẻo','Xăng, dầu','Nhiên liệu nạp cho bật lửa','Diêm không an toàn (quẹt đâu cũng cháy)','Ôxy lỏng'],
+ no:['Dao, kéo','Búa, cờ-lê, cưa','Gậy bóng chày, gậy gôn','Dùi cui','Dụng cụ tập võ thuật','Rìu, dao phay']},
+{id:'m25', p:'main', sc:'s-hlxt', j:'0.3', s:'DM III.4, III.13', all:1,
+ q:'Vật phẩm nào CHỈ được mang THEO NGƯỜI (không xách tay, không ký gửi)?',
+ ok:['Bật lửa nhỏ loại hút thuốc','Bao diêm an toàn loại nhỏ','Bật lửa đèn khò CÓ nắp chụp chống kích hoạt','Máy tạo nhịp tim vị phóng xạ, thiết bị y tế cấy trong cơ thể'],
+ no:['Pin sạc dự phòng ≤ 100 Wh','Pin nhiên liệu cho thiết bị điện tử','Nhiệt kế y tế chứa thủy ngân']},
+{id:'m26', p:'main', sc:'s-hlkg', j:'0.4', s:'DM III.14, 15, 20, 21, 25',
+ q:'Vật phẩm nào KHÔNG được mang THEO NGƯỜI (dù có thể xách tay hoặc ký gửi)?',
+ ok:['Đá khô','Thiết bị pin sinh nhiệt cao có thể tạo lửa (đèn lặn cường độ cao)','Ba lô cứu hộ tuyết lở có bình khí nén','Pin khô theo A67 và thiết bị chứa pin này','Khí áp kế / nhiệt kế thủy ngân loại mục 21'],
+ no:['Bật lửa nhỏ','Bao diêm an toàn','Pin sạc dự phòng ≤ 100 Wh','Bình khí ôxy nhỏ dùng trong y tế','Thuốc y tế không chứa chất phóng xạ']},
+{id:'m27', p:'main', sc:'s-hlkg', j:'0.4', s:'DM Mục III',
+ q:'Vật phẩm nào CẦN HÃNG CHẤP THUẬN?',
+ ok:['Pin dự phòng Li-ion 100–160 Wh','Thiết bị điện tử cầm tay 100–160 Wh','Đá khô','Xe lăn / thiết bị di chuyển chạy pin','Đạn đóng gói an toàn 1.4S','Bình khí ôxy nhỏ dùng trong y tế','Khí áp kế / nhiệt kế thủy ngân mục 21','Va-li gắn pin lithium','Ba lô cứu hộ tuyết lở','Hộp nổ nhỏ trong áo phao, phao cứu hộ'],
+ no:['Pin dự phòng ≤ 100 Wh','Điện thoại, laptop ≤ 100 Wh','Bật lửa nhỏ','Đồ trang điểm dạng xịt','Thuốc y tế không chứa chất phóng xạ','Bóng đèn tiết kiệm năng lượng','Đồ uống có cồn ≤ 24%']},
+{id:'m28', p:'main', sc:'s-hlkg', j:'0.3.3', s:'DM III.1, 12, 21, 29', all:1,
+ q:'Vật phẩm nào phải BÁO CƠ TRƯỞNG (ngoài hãng chấp thuận)?',
+ ok:['Đạn đóng gói an toàn nhóm 1.4S','Bình khí ôxy / khí nhỏ dùng trong y tế','Khí áp kế / nhiệt kế thủy ngân mục 21','Thiết bị an ninh (va-li ngoại giao…) chứa hàng nguy hiểm'],
+ no:['Đá khô','Xe lăn chạy pin','Pin dự phòng 100–160 Wh']},
+// ---------------- Vật phẩm có điều kiện cụ thể ----------------
+{id:'m29', p:'main', sc:'s-hlkg', j:'0.4.6', s:'DM III.20',
+ q:'ĐÁ KHÔ – quy định nào ĐÚNG?',
+ ok:['Không quá 2,5 kg / người','Ký gửi CÓ, xách tay CÓ, theo người KHÔNG','Cần hãng chấp thuận','Chỉ để bảo quản thực phẩm / chất dễ hư hỏng không phải hàng nguy hiểm','Bao bì có lỗ thoát khí CO₂','Ký gửi: ghi “DRY ICE” hoặc “CARBON DIOXIDE, SOLID” + khối lượng tịnh'],
+ no:['Không quá 05 kg / người','Được mang theo người','Không cần hãng chấp thuận','Bao bì phải kín hoàn toàn, không thoát khí']},
+{id:'m30', p:'main', sc:'s-hlkg', j:'0.3.1.2', s:'DM III.5', all:1,
+ q:'XE LĂN chạy pin LITHIUM-ION – quy định nào ĐÚNG?',
+ ok:['Ký gửi, cần hãng chấp thuận','Pin không quá 300 Wh','Pin dự phòng: 01 viên ≤ 300 Wh HOẶC 02 viên ≤ 160 Wh mỗi viên','Pin đạt UN 38.3; pin tháo rời phải chống đoản mạch'],
+ no:['Pin được tới 500 Wh','Pin dự phòng tối đa 03 viên ≤ 160 Wh','Không cần hãng chấp thuận']},
+{id:'m31', p:'main', sc:'s-hlkg', j:'0.3.3', s:'DM III.12',
+ q:'ĐẠN đóng gói an toàn nhóm 1.4S – quy định nào ĐÚNG?',
+ ok:['Chỉ UN 0012 và UN 0014','Chỉ được ký gửi','Hãng chấp thuận + báo cơ trưởng','≤ 05 kg tổng khối lượng / hành khách, mục đích cá nhân','Không bao gồm đạn nổ hoặc đầu đạn','Không cộng dồn khối lượng của nhiều người vào một kiện'],
+ no:['≤ 10 kg / hành khách','Được xách tay nếu có giấy phép','Được cộng dồn nhiều người vào một kiện','Không cần báo cơ trưởng']},
+{id:'m32', p:'main', sc:'s-hlkg', j:'0.4.11', s:'DM III.1', all:1,
+ q:'BÌNH KHÍ ÔXY / KHÍ NHỎ dùng trong y tế – quy định nào ĐÚNG?',
+ ok:['Ký gửi, xách tay, theo người đều được','Hãng chấp thuận + báo cơ trưởng','Mỗi bình ≤ 05 kg tổng khối lượng','Xi lanh, van, van xả được bảo vệ khỏi hư hỏng','Cơ trưởng được báo số lượng bình và vị trí chất xếp'],
+ no:['Mỗi bình ≤ 10 kg','Không cần báo cơ trưởng','Bình chứa ôxy hóa lỏng cũng được mang']},
+{id:'m33', p:'main', sc:'s-hlkg', j:'0.2.4', s:'DM III.19', all:1,
+ q:'VA-LI, HÀNH LÝ GẮN PIN LITHIUM – quy định nào ĐÚNG?',
+ ok:['Pin đạt UN 38.3; va-li vận chuyển theo người / xách tay','Va-li cho phép tháo pin: tháo theo hướng dẫn nhà sản xuất → ký gửi như hành lý thường','Pin tháo rời phải chống đoản mạch, các đầu cực tách nhau','Pin Li kim loại 2–8 g hoặc Li-ion 100–160 Wh: phải được hãng chấp thuận'],
+ no:['Được ký gửi khi chưa tháo pin','Pin 100–160 Wh không cần chấp thuận','Pin tháo rời để chung trong va-li ký gửi']},
+{id:'m34', p:'main', sc:'s-hlxt', j:'0.3.6', s:'DM III.18',
+ q:'PIN NHIÊN LIỆU cho thiết bị điện tử cầm tay – quy định nào ĐÚNG?',
+ ok:['KHÔNG ký gửi; được xách tay và theo người','Không nạp pin nhiên liệu trên tàu bay (trừ khi dùng hộp nhiên liệu dự phòng)','Tối đa 02 hộp đựng nhiên liệu dự phòng / hành khách','Vỏ pin ghi “APPROVED FOR CARRIAGE IN AIRCRAFT CABIN ONLY”','Hộp đựng nhiên liệu dự phòng thì được ký gửi','Pin nhiên liệu chỉ dùng để sạc pin thiết bị khác → không được vận chuyển'],
+ no:['Pin nhiên liệu được ký gửi','Tối đa 05 hộp nhiên liệu dự phòng','Được nạp pin nhiên liệu trên tàu bay bất cứ lúc nào','Pin nhiên liệu dùng để sạc thiết bị khác được mang']},
+{id:'m35', p:'main', sc:'s-hlkg', j:'0.4.4', s:'DM III.9, III.16', max:5,
+ q:'Máy uốn tóc khí hydrocarbon, hộp nổ nhỏ (áo phao) – quy định nào ĐÚNG?',
+ ok:['Máy uốn tóc: mỗi người 01 máy, bộ phận sinh nhiệt có nắp chụp','Máy uốn tóc: bình khí dự phòng không được vận chuyển','Áo phao tự làm phồng: ≤ 02 thiết bị / hành khách, hãng chấp thuận','Áo phao: ≤ 02 hộp nổ nhỏ trong mỗi thiết bị, ≤ 02 hộp dự phòng','Hộp nổ nhỏ cho thiết bị khác: ≤ 04 hộp / hành khách, mỗi hộp ≤ 50 ml nước'],
+ no:['Máy uốn tóc: mỗi người 02 máy','Bình khí dự phòng máy uốn tóc được ký gửi','Áo phao tự làm phồng: ≤ 05 thiết bị / hành khách','Hộp nổ nhỏ cho thiết bị khác: không giới hạn số lượng']},
+// ---------------- Quy trình soi chiếu ----------------
+{id:'m36', p:'main', sc:'s-hlkg', j:'0.0', s:'TT14 Đ22',
+ q:'Soi chiếu HÀNH LÝ KÝ GỬI – nội dung nào ĐÚNG?',
+ ok:['Kiểm tra bằng máy soi 100%','Nghi vấn → kiểm tra trực quan / thiết bị phát hiện chất nổ / biện pháp khác','Có dấu hiệu hoặc thông tin đe dọa → LỤC SOÁT','Giám sát màn hình ≤ 30 phút liên tục, quay lại sau tối thiểu 15 phút','Kiểm tra trực quan phải có mặt chủ HL / đại diện hợp pháp / đại diện hãng (trừ khẩn nguy)','Từng hành khách xác định đúng HLKG của mình, không làm thủ tục nhóm'],
+ no:['Giám sát màn hình HLKG phải nghỉ tối thiểu 30 phút','Được mở HLKG kiểm tra khi vắng cả chủ HL lẫn đại diện hãng (không khẩn nguy)','Chỉ soi chiếu ngẫu nhiên 10% HLKG','Giám sát màn hình liên tục tối đa 60 phút']},
+{id:'m37', p:'main', sc:'s-hlkg', j:'0.5.3', s:'TT14 Đ22.6', all:1,
+ q:'HLKG quá cảnh / nối chuyến đã đưa xuống tàu bay được MIỄN soi lại khi đủ các điều kiện nào?',
+ ok:['Không rời sân đỗ, hoặc được giám sát ANHK liên tục','Có dán thẻ quá cảnh, nối chuyến, tạm dừng nội địa','Được đồng bộ với hành khách (hoặc tổ bay)','Có thỏa thuận VN – quốc gia nơi tàu bay cất cánh về công nhận soi chiếu'],
+ no:['Hành khách là khách hạng thương gia','Hành lý nặng dưới 23 kg']},
+{id:'m38', p:'main', sc:'s-hlkg', j:'0.5.1.0', s:'TT14 Đ24.1',
+ q:'Hành lý được phép KHÔNG đi cùng chuyến với hành khách trong trường hợp nào?',
+ ok:['Hành lý thất lạc','Hành lý bị giữ lại vì lý do an ninh, an toàn chuyến bay','Túi ngoại giao, túi lãnh sự','Hành khách chết trên tàu bay, thi thể được đưa ra khỏi tàu bay','Hành lý vận chuyển như hàng hóa','Bất khả kháng'],
+ no:['Hành khách đã có thẻ lên tàu bay nhưng không có mặt','Hành khách đổi ý không muốn bay','Hành lý quá cước chưa thanh toán']},
+{id:'m39', p:'main', sc:'s-hlkg', j:'0.5', s:'TT14 Đ23.4, 24.3–4, 25',
+ q:'Xử lý hành lý trường hợp đặc biệt – nội dung nào ĐÚNG?',
+ ok:['HLKG rách, vỡ, bung khóa, có dấu hiệu can thiệp → tái kiểm tra ANHK + lập biên bản','Hành khách có thẻ lên tàu bay nhưng không có mặt → dỡ toàn bộ hành lý xuống','HL không đi cùng hành khách → ít nhất 1 biện pháp bổ sung + lập biên bản','HL thất lạc, không người nhận → soi chiếu + niêm phong trước khi vào khu lưu giữ','Phát hiện đồ vật không xác nhận được chủ → báo ngay lực lượng KSANHK'],
+ no:['HLKG rách, vỡ được chất xếp bình thường nếu chủ đồng ý','Hành lý của khách không có mặt được bay tiếp để trả sau','HL thất lạc đưa thẳng vào khu lưu giữ không cần soi']},
+{id:'m40', p:'main', sc:'s-hlxt', j:'0.4.1', s:'TT14 Đ19.9', all:1,
+ q:'Hành khách phải CỞI BỎ những gì trước khi qua cổng từ?',
+ ok:['Giày, dép (trừ khi có thiết bị kiểm tra giày, dép)','Áo khoác, mũ','Thắt lưng','Vật dụng cá nhân, đồ vật mang theo người'],
+ no:['Thiết bị y tế gắn trên người','Giấy tờ nhân thân phải bỏ vào hành lý ký gửi']},
+{id:'m41', p:'main', sc:'s-hlxt', j:'0.5', s:'TT14 Đ19.5, 19.8c, 19.14, 22.3a', all:1,
+ q:'Mốc số nào ĐÚNG đối với người làm nhiệm vụ soi chiếu?',
+ ok:['Soi chiếu 100% hành khách, HLXT trước khi vào KVHC','Giám sát màn hình HLXT ≤ 30 phút, nghỉ tối thiểu 30 phút','Giám sát màn hình HLKG ≤ 30 phút, quay lại sau tối thiểu 15 phút','Kiểm tra bổ sung ngẫu nhiên tối thiểu 10% sau kiểm tra lần đầu'],
+ no:['Giám sát màn hình HLXT ≤ 45 phút','Kiểm tra bổ sung ngẫu nhiên tối thiểu 5% hành khách','Giám sát màn hình HLKG nghỉ tối thiểu 05 phút']},
+// ---------------- 1.2 ④ Tình huống ----------------
+{id:'m42', p:'main', sc:'s-th', j:'0.0.0', s:'TT14 Đ40.1', all:1,
+ q:'Phát hiện bom, mìn, vật liệu nổ KHÔNG RÕ CƠ CHẾ NỔ → phải làm gì?',
+ ok:['Đánh giá nguy cơ để có biện pháp xử lý thích hợp','Để nguyên tại chỗ','Nhanh chóng phong tỏa khu vực','Sơ tán hành khách đến nơi an toàn','Báo ngay lực lượng phá dỡ bom mìn của công an, quân đội'],
+ no:['Tự tháo ngòi nổ để vô hiệu hóa','Mang vật nghi vấn ra khu vực khác để kiểm tra','Yêu cầu hành khách tự mở hành lý']},
+{id:'m43', p:'main', sc:'s-th', j:'0.0.3', s:'TT14 Đ40.3', all:1,
+ q:'Vật phẩm nguy hiểm KHÔNG ĐỦ ĐIỀU KIỆN vận chuyển (vd pin dự phòng trong HLKG, rượu > 70%) → 1 trong các hướng nào?',
+ ok:['Hướng dẫn hành khách bỏ lại','Hướng dẫn hành khách làm thủ tục vận chuyển theo quy định','Từ chối hoàn thành thủ tục kiểm tra ANHK, yêu cầu tuân thủ điều kiện vận chuyển'],
+ no:['Lập biên bản, chuyển giao người và vật phẩm cho cơ quan chức năng','Khống chế, cách ly hành khách với hành lý']},
+{id:'m44', p:'main', sc:'s-th', j:'0.0.2', s:'TT14 Đ40.2, 40.4', max:5,
+ q:'Phát hiện vật phẩm nguy hiểm KHÔNG CÓ GIẤY PHÉP hoặc VŨ KHÍ, VẬT LIỆU NỔ → xử lý thế nào?',
+ ok:['VPNH không giấy phép: lập biên bản theo mẫu Phụ lục XVIII','VPNH không giấy phép: chuyển giao người, hồ sơ, vật phẩm cho cơ quan có thẩm quyền','VPNH không giấy phép: thông báo hãng hàng không','Vũ khí, VLN trong người hành khách → nhanh chóng khống chế, ngăn chặn','Vũ khí, VLN trong HLXT → cách ly ngay hành khách với hành lý, khống chế để xử lý'],
+ no:['Hướng dẫn hành khách tự bỏ lại vũ khí rồi cho đi tiếp','Trả lại vật phẩm cho hành khách sau khi ghi chép','Cho hành khách gửi vật phẩm vào hành lý ký gửi']},
+{id:'m45', p:'main', sc:'s-th', j:'0.1.2', s:'ND215 Đ12–13',
+ q:'LỤC SOÁT an ninh hàng không – nội dung nào ĐÚNG?',
+ ok:['Lục soát khi phát hiện dấu hiệu / có thông tin đe dọa an ninh chuyến bay','Lục soát người, hành lý của người phát ngôn đe dọa tại điểm soi chiếu, KVHC','Lục soát hành lý, đồ vật không xác định được chủ','Chỉ huy Đội trực ca có thẩm quyền (trường hợp a, b, c)','Nam lục soát nam, nữ lục soát nữ','Phải lập biên bản lục soát','Không lục soát người được hưởng quyền bất khả xâm phạm'],
+ no:['Cán bộ soi chiếu tự quyết định lục soát mọi trường hợp','Không cần lập biên bản nếu không phát hiện gì','Lục soát người không cần cùng giới','Lục soát mọi hành khách mang chai nước > 100 ml']},
+{id:'m46', p:'main', sc:'s-th', j:'0.2', s:'TT14 Đ19.5, 34, 36, 37; ND215 Đ21',
+ q:'Tình huống HÀNH KHÁCH tại điểm soi chiếu – hướng xử lý nào ĐÚNG?',
+ ok:['Từ chối soi chiếu → từ chối vận chuyển','Phát ngôn đe dọa an ninh → lục soát người, hành lý; có thể bị cấm vận chuyển 03–12 tháng','Gây rối khi chưa lên tàu bay → ngăn không cho lên, tạm giữ người và giấy tờ','Say rượu, chất kích thích → hãng đánh giá, quyết định; hành lý kiểm tra trực quan','Người bị áp giải → xuất trình lệnh áp giải, kiểm tra ở khu vực riêng'],
+ no:['Từ chối soi chiếu → cho qua nếu là khách quen','Phát ngôn đe dọa đùa vui → bỏ qua, không xử lý','Hành khách say rượu → lực lượng soi chiếu tự quyết định hủy vé']},
+// ---------------- 1.1 XNC ----------------
+{id:'m47', p:'main', sc:'s-xnc', j:'0.3.3', s:'XNC-VN Đ36',
+ q:'Trường hợp nào bị TẠM HOÃN XUẤT CẢNH (công dân Việt Nam)?',
+ ok:['Bị can, bị cáo; người bị tố giác có căn cứ cần ngăn chặn','Hoãn chấp hành án phạt tù, tha tù trước hạn, án treo','Có nghĩa vụ trong tố tụng dân sự, phải thi hành án dân sự','Chưa hoàn thành nghĩa vụ thuế','Đang bị cưỡng chế thi hành quyết định xử phạt VPHC','Bị thanh tra, kiểm tra có vi phạm đặc biệt nghiêm trọng','Đang mắc dịch bệnh nguy hiểm lây lan','Ảnh hưởng quốc phòng, an ninh'],
+ no:['Bị trục xuất chưa quá 03 năm','Có hộ chiếu còn hạn dưới 06 tháng','Chưa có vé khứ hồi','Mang hành lý quá cước']},
+{id:'m48', p:'main', sc:'s-xnc', j:'0.4.3', s:'XNC-NN Đ21',
+ q:'Trường hợp nào CHƯA CHO NHẬP CẢNH (người nước ngoài)?',
+ ok:['Không đủ điều kiện nhập cảnh','Trẻ em dưới 14 tuổi không có cha, mẹ, người giám hộ / người được ủy quyền đi cùng','Giả mạo giấy tờ, khai sai sự thật','Mắc bệnh tâm thần, bệnh truyền nhiễm nguy hiểm cho cộng đồng','Bị trục xuất chưa quá 03 năm','Bị buộc xuất cảnh chưa quá 06 tháng','Lý do phòng chống dịch, thiên tai, quốc phòng, an ninh'],
+ no:['Chưa hoàn thành nghĩa vụ thuế tại Việt Nam','Có nghĩa vụ thi hành án dân sự','Mang theo pin sạc dự phòng','Bị trục xuất cách đây 05 năm']},
+{id:'m49', p:'main', sc:'s-xnc', j:'0.5.5', s:'L130 Đ94.1',
+ q:'Hành vi nào là CAN THIỆP BẤT HỢP PHÁP vào hoạt động hàng không dân dụng (L130 Đ94)?',
+ ok:['Cưỡng đoạt trái phép tàu bay','Phá hủy tàu bay đang khai thác','Bắt giữ con tin trong tàu bay hoặc tại cảng hàng không','Xâm nhập bằng vũ lực vào tàu bay, cảng, công trình HKDD','Đưa vật phẩm nguy hiểm vào tàu bay, cảng, KVHC cho mục đích phạm tội','Sử dụng tàu bay như vũ khí','Cung cấp thông tin sai đến mức uy hiếp an toàn','Cố ý vi phạm pháp luật uy hiếp an toàn khai thác tàu bay, cảng'],
+ no:['Làm thủ tục trễ giờ','Mang chai nước > 100 ml đến điểm soi chiếu','Quên lấy pin dự phòng ra khỏi HLKG','Từ chối dịch vụ suất ăn trên tàu bay']},
+{id:'m50', p:'main', sc:'s-xnc', j:'0.5.3', s:'ND215 Đ21',
+ q:'Hành vi nào bị CẤM VẬN CHUYỂN 03–12 THÁNG?',
+ ok:['Gây rối','Phát ngôn đe dọa bom, mìn tại khu làm thủ tục, khu cách ly, sân bay, trên tàu bay','Tung tin sai','Dùng giấy tờ giả để đi tàu bay','Vi phạm trật tự, an toàn xã hội'],
+ no:['Tái phạm hành vi đã bị cấm vận chuyển','Can thiệp bất hợp pháp điểm a–e Đ94 L130','Chiếm đoạt, gây bạo loạn tại cảng hàng không','Can thiệp bất hợp pháp điểm g, h Đ94 L130']},
+{id:'m51', p:'main', sc:'s-xnc', j:'0.5.3.3', s:'ND215 Đ21.2, 21.4', all:1,
+ q:'Trường hợp nào bị cấm vận chuyển > 12–24 tháng hoặc VĨNH VIỄN?',
+ ok:['> 12–24 tháng: tái phạm; can thiệp bất hợp pháp điểm g, h Đ94','Vĩnh viễn: tái phạm nhóm 12–24 tháng','Vĩnh viễn: can thiệp bất hợp pháp điểm a–e Đ94','Vĩnh viễn: chiếm đoạt, bạo loạn tại cảng hàng không'],
+ no:['Vĩnh viễn: gây rối lần đầu','Vĩnh viễn: dùng giấy tờ giả lần đầu','> 12–24 tháng: tung tin sai lần đầu']},
+{id:'m52', p:'main', sc:'s-cl', j:'0.5.1', s:'L130 Đ54',
+ q:'Hãng hàng không có quyền TỪ CHỐI VẬN CHUYỂN hành khách khi nào?',
+ ok:['Tình trạng sức khỏe có thể gây nguy hại','Để phòng ngừa dịch bệnh','Không chấp hành quy định an toàn, ANHK','Gây mất trật tự','Say rượu, chất kích thích đến mức không làm chủ hành vi','Vì lý do an ninh','Theo yêu cầu của cơ quan có thẩm quyền'],
+ no:['Hành khách mang thuốc chữa bệnh có đơn','Hành khách mua hàng miễn thuế trong túi STEB','Hành khách đi cùng trẻ sơ sinh','Hành khách mang laptop ≤ 100 Wh']},
+{id:'m53', p:'main', sc:'s-xnc', j:'0.3.0', s:'XNC-VN Đ33–35',
+ q:'Điều kiện XUẤT CẢNH / NHẬP CẢNH của công dân Việt Nam – nội dung nào ĐÚNG?',
+ ok:['Xuất cảnh: giấy tờ XNC còn nguyên vẹn, còn thời hạn','Xuất cảnh: có thị thực / giấy tờ nước đến cho nhập cảnh (trừ miễn thị thực)','Xuất cảnh: không bị cấm, không thuộc diện tạm hoãn xuất cảnh','Dưới 14 tuổi, mất NLHVDS: phải có người đại diện hợp pháp đi cùng','Nhập cảnh: giấy tờ XNC còn nguyên vẹn, còn thời hạn','Không đủ ĐK nhập cảnh → xử lý VPHC, sau đó vẫn giải quyết cho nhập cảnh'],
+ no:['Xuất cảnh: phải có vé khứ hồi','Không đủ ĐK nhập cảnh → không cho nhập cảnh','Dưới 16 tuổi phải có người đại diện đi cùng','Xuất cảnh: phải có xác nhận của nơi cư trú']},
+{id:'m54', p:'main', sc:'s-xnc', j:'0.2.1', s:'XNC-VN Đ7', all:1,
+ q:'HỘ CHIẾU PHỔ THÔNG – thời hạn nào ĐÚNG?',
+ ok:['Từ đủ 14 tuổi: 10 năm','Dưới 14 tuổi: 5 năm','Hộ chiếu rút gọn: ≤ 12 tháng, dùng 01 lần','Không được gia hạn'],
+ no:['Từ đủ 14 tuổi: 5 năm','Dưới 14 tuổi: 3 năm','Được gia hạn 01 lần']},
+{id:'m55', p:'main', sc:'s-cl', j:'0.2', s:'TT14 Đ20; XNC-NN Đ25', max:5,
+ q:'QUÁ CẢNH, NỐI CHUYẾN – nội dung nào ĐÚNG?',
+ ok:['Xuống tàu bay phải mang theo HLXT, đồ vật cá nhân','Phải soi chiếu lại như hành khách xuất phát, trừ khi đủ điều kiện miễn','Miễn soi lại: có thẻ quá cảnh + không ra khỏi KVHC, được giám sát liên tục','Miễn soi lại: không tiếp xúc HLKG / khu trả hành lý + có thỏa thuận VN – nước xuất phát','Người nước ngoài quá cảnh đường hàng không: miễn thị thực, ở trong khu vực quá cảnh'],
+ no:['Được để HLXT lại trên tàu bay khi xuống','Hành khách quá cảnh luôn được miễn soi lại','Người nước ngoài quá cảnh được tự do ra khỏi sân bay trong 24 giờ']},
+{id:'m56', p:'main', sc:'s-cl', j:'0.1', s:'TT14 Đ39, Đ23.4', all:1,
+ q:'Khi nào phải TÁI KIỂM TRA hành khách, hành lý?',
+ ok:['Hành khách, HLXT đã kiểm tra nhưng ra khỏi KVHC rồi quay lại','Tiếp xúc, trộn lẫn với người / đồ vật chưa kiểm tra, hoặc nghi mang VPNH','Niêm phong an ninh không nguyên vẹn','HLKG rách, vỡ, bung khóa, có dấu hiệu can thiệp'],
+ no:['Hành khách mua hàng miễn thuế trong khu cách ly','Hành khách đổi cửa khởi hành trong khu cách ly']},
+{id:'m57', p:'main', sc:'s-xnc', j:'0.5', s:'L130 Đ55.7; XNC-VN Đ33; XNC-NN Đ21; TT14 Đ49.2b', max:5,
+ q:'Quy định về TRẺ EM – nội dung nào ĐÚNG?',
+ ok:['Trẻ dưới 02 tuổi phải có người lớn đi cùng','Trẻ 02 đến dưới 12 tuổi đi một mình phải dùng dịch vụ hỗ trợ của hãng','Công dân VN dưới 14 tuổi xuất cảnh phải có người đại diện hợp pháp đi cùng','Trẻ nước ngoài dưới 14 tuổi không có cha, mẹ, người giám hộ đi cùng → chưa cho nhập cảnh','Sữa, thức ăn trẻ em không bị giới hạn 100 ml nếu có trẻ đi cùng'],
+ no:['Trẻ em dưới 12 tuổi được miễn soi chiếu','Trẻ 02 tuổi được đi một mình không cần dịch vụ hỗ trợ','Hộ chiếu của trẻ dưới 14 tuổi có thời hạn 10 năm']},
+{id:'m58', p:'main', sc:'s-th', j:'0.2.6', s:'ND215 Đ45', max:5,
+ q:'Đối tượng nào được MIỄN KIỂM TRA an ninh hàng không?',
+ ok:['Tổng Bí thư','Chủ tịch nước','Chủ tịch Quốc hội','Thủ tướng Chính phủ','Thường trực Ban Bí thư','Nguyên thủ nước ngoài thăm Việt Nam theo đề nghị của Bộ Ngoại giao'],
+ no:['Phi công, tiếp viên của hãng','Khách hạng thương gia','Nhân viên hàng không có thẻ kiểm soát an ninh','Khách VIP của cảng hàng không']},
+
+// ---------------- 🏛️ LĨNH VỰC QUẢN LÝ ----------------
+{id:'q01', p:'ql', sc:'ql', j:'0.0', s:'ND215 Đ48; TT14 Đ3.40, Đ70', max:5,
+ q:'Nội dung nào ĐÚNG về Nhà chức trách ANHK và hệ thống tổ chức hiện nay?',
+ ok:['Nhà chức trách ANHK Việt Nam = Cục Quản lý xuất nhập cảnh, Bộ Công an','Tên giao dịch quốc tế: “Viet Nam Immigration Department”','Trung tâm ANHK quốc gia giúp việc Cục QLXNC, kiểm tra – giám sát toàn quốc','Công an cửa khẩu CHKQT và Phòng QLXNC Công an tỉnh thực hiện một số nhiệm vụ của Nhà chức trách tại cảng','Cục QLXNC là đầu mối thường trực với ICAO'],
+ no:['Cục Hàng không Việt Nam là Nhà chức trách ANHK (theo NĐ 215/2026)','Cảng vụ hàng không là Nhà chức trách ANHK','Bộ Xây dựng quản lý nhà nước về an ninh hàng không','Lực lượng KSANHK chỉ gồm nhân viên doanh nghiệp']},
+{id:'q02', p:'ql', sc:'ql', j:'0.1.1', s:'L130 Đ97.1', all:1,
+ q:'3 chương trình ANHK cấp quốc gia gồm những chương trình nào?',
+ ok:['Chương trình an ninh hàng không dân dụng Việt Nam','Chương trình huấn luyện an ninh hàng không','Chương trình kiểm soát chất lượng an ninh hàng không'],
+ no:['Chương trình an toàn hàng không quốc gia','Chương trình khẩn nguy sân bay']},
+{id:'q03', p:'ql', sc:'ql', j:'0.7.3', s:'ND215 Đ23', max:5,
+ q:'ANHK TĂNG CƯỜNG – nội dung nào ĐÚNG?',
+ ok:['Có 3 cấp độ tăng cường','Cấp 1: sự kiện chính trị, xã hội trọng đại; tình hình an ninh trật tự phức tạp','Cấp 2: tin tình báo về âm mưu nhưng chưa rõ địa điểm, mục tiêu, thời gian','Cấp 3: tin xác thực có địa điểm, mục tiêu, thời gian cụ thể','Cục trưởng Cục QLXNC quyết định áp dụng, hủy bỏ; trao đổi với Nhà chức trách hàng không trong 24 giờ'],
+ no:['Có 5 cấp độ tăng cường','Giám đốc Cảng vụ quyết định áp dụng cấp độ','Cấp 1: tin xác thực có địa điểm, thời gian cụ thể','Trao đổi với Nhà chức trách hàng không trong 72 giờ']},
+{id:'q04', p:'ql', sc:'ql', j:'0.6', s:'TT14 Đ86; ND215 Đ50–52', max:5,
+ q:'Giám sát ANHK & giám sát viên – nội dung nào ĐÚNG?',
+ ok:['3 hình thức giám sát: camera/cảm biến/thiết bị · con người · động vật nghiệp vụ','Giám sát viên do Cục QLXNC bổ nhiệm, cấp thẻ; nhiệm kỳ ≤ 03 năm','Giám sát viên được vào mọi khu vực hạn chế, lên tàu bay','Giám sát viên được thu giữ thẻ, giấy phép của người vi phạm; lập biên bản','Kiểm soát chất lượng gồm cả thử nghiệm công khai hoặc bí mật'],
+ no:['Giám sát viên nhiệm kỳ 05 năm','Giám sát viên do doanh nghiệp tự bổ nhiệm','Giám sát ANHK chỉ bằng camera','Thử nghiệm ANHK chỉ được làm công khai']},
+{id:'q05', p:'ql', sc:'ql', j:'0.3.3', s:'ND215 Đ40.1',
+ q:'Nhiệm vụ, quyền hạn của lực lượng KSANHK thuộc Bộ Công an gồm?',
+ ok:['Thực hiện kiểm soát ANHK theo thẩm quyền','Phương án đối phó ban đầu; tấn công, chế áp tàu bay không người lái xâm phạm','Đề nghị Cục trưởng Cục QLXNC đình chỉ chuyến bay','Ngăn chặn người uy hiếp; THU GIỮ vũ khí, chất nổ, VPNH đưa trái phép vào KVHC','Xử lý vi phạm; yêu cầu hãng từ chối vận chuyển vì lý do an ninh','Phối hợp rà, phá bom mìn; xử lý hành lý chứa vật phẩm nguy hiểm'],
+ no:['Tự quyết định cấm vận chuyển vĩnh viễn hành khách','Tự ban hành Danh mục vật phẩm nguy hiểm','Bắt giữ tàu bay theo quyết định của mình','Xử phạt tù người vi phạm']},
+{id:'q06', p:'ql', sc:'ql', j:'0.4', s:'TT14 Đ72, 89.10, 90.5', max:5,
+ q:'Giấy phép, năng định, thẻ – nội dung nào ĐÚNG?',
+ ok:['Cán bộ, chiến sĩ soi chiếu phải có giấy phép + năng định còn hiệu lực do Cục QLXNC cấp','Cục QLXNC kiểm tra, sát hạch, cấp, đình chỉ, thu hồi giấy phép và năng định','Nhân viên KSANHK doanh nghiệp được Cục QLXNC cấp giấy phép','Công an tỉnh cấp, quản lý thẻ, giấy phép kiểm soát an ninh cảng trong phạm vi quản lý','Cục QLXNC bổ nhiệm, cấp, thu hồi thẻ giám sát viên'],
+ no:['Doanh nghiệp tự cấp giấy phép nhân viên KSANHK','Năng định soi chiếu do Cảng vụ hàng không cấp','Cán bộ soi chiếu chỉ cần tập huấn, không cần năng định']},
+{id:'q07', p:'ql', sc:'ql', j:'0.10', s:'ND215 Đ25, Đ57', max:4,
+ q:'An ninh nội bộ, thông tin & dữ liệu – nội dung nào ĐÚNG?',
+ ok:['Doanh nghiệp xác minh lý lịch nhân viên hàng không trước tuyển dụng','CSDL ANHK tập trung có định danh hành khách, đối tượng cấm bay, sinh trắc học','Đơn vị KSANHK cung cấp dữ liệu quá trình kiểm tra hành khách, hành lý','Nghiêm cấm dùng dữ liệu hành khách ngoài mục đích ANHK, quốc phòng, an ninh','Hình ảnh camera, máy soi tia X phải được quản lý, lưu giữ phục vụ truy xét'],
+ no:['Dữ liệu hành khách được dùng cho quảng cáo của hãng','Hình ảnh máy soi xóa ngay sau ca trực','Không cần xác minh lý lịch nhân viên là người nước ngoài']}
+];
+
+// ===== TAB 🎮 GAME ôn kiến thức (bản 11 – 01/10/2026) =====
+// Câu hỏi sinh tự động từ dữ liệu tab 📚 Kiến thức (MAP_*, GT_TREES, AN_TREES, *_KEY, QL_TABLE, QL_JOB) – KHÔNG thêm nội dung mới.
+// 4 phần giống tab Kiến thức · 3 kiểu chơi: 🎯 Trắc nghiệm nhiều đáp án (bản 12: câu soạn sẵn ở gm_bank.js + câu theo mục sơ đồ; số lựa chọn = 1,5 × số đáp án đúng) · 🎨 Phân loại màu (Cấm / Có điều kiện / Được phép) · 🃏 Lật thẻ.
+// Lưu localStorage: anhk_gp (phần đang chọn), anhk_gm_set (kiểu chơi, phạm vi, dạng câu, số câu), anhk_gm_best, anhk_gm_wr_<phần>, anhk_gm_fc_<phần>.
+
+const GM_QT = [ // dạng câu trắc nghiệm (bản 12: nhiều đáp án đúng, số lựa chọn = 1,5 × số đáp án đúng)
+  {id:'bank', label:'📋 Câu hỏi theo nội dung'},
+  {id:'tree', label:'🌳 Theo từng mục của sơ đồ'}
+];
+const GM_COL = [['r','🟥 Cấm'],['a','🟨 Có điều kiện'],['g','🟩 Được phép']];
+const GM_COLNAME = {r:'CẤM', a:'CÓ ĐIỀU KIỆN / CẦN XỬ LÝ', g:'ĐƯỢC PHÉP / THUẬN LỢI', i:'LƯU Ý'};
+const GM_WHO = ['Cục QLXNC', 'Đơn vị KSANHK / Công an tỉnh', 'Doanh nghiệp, hãng'];
+const GM_MODES = [['quiz','🎯 Trắc nghiệm'],['col','🎨 Phân loại màu'],['fc','🃏 Lật thẻ']];
+const GM_NUM = /(^|[^\p{L}\d.,\/])(\d+(?:[.,]\d+)?(?:\s?[–-]\s?\d+(?:[.,]\d+)?)?)\s?(Wh|ml|g|kg|cm|mm|m|phút|giờ|tháng|ngày|năm|%|lít|độ|tuổi|km)(?![\p{L}\d])(?!\s*\d)/gu;
+
+let GM_PARTS = [], GM = null;
+const gmPlain = t => String(t).replace(/\*\*/g, '');
+const gmNT = t => norm(gmPlain(t)).replace(/[^a-z0-9]+/g, ' ').trim();
+const gmShuf = a => { a = a.slice(); for(let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const gmPick = a => a[Math.floor(Math.random() * a.length)];
+const gmGet = (k, d) => { try{ const v = store.get(k); return v ? JSON.parse(v) : d; }catch(e){ return d; } };
+const gmSet = (k, v) => store.set(k, JSON.stringify(v));
+const gmCut = (s, n) => { s = gmPlain(s); return s.length > n ? s.slice(0, n - 1) + '…' : s; };
+
+// ---- dựng ngân hàng dữ liệu cho từng phần ----
+function gmMakePart(id, kv, name, desc, scopes){
+  const P = {id, kv, name, desc, scopes, items:[], byId:{}};
+  scopes.forEach(sc => {
+    if(sc.tree){
+      (function walk(n, path, depth, anc){
+        const it = {id: sc.id + '|' + path, kind:'node', sc: sc.id, sid: sc.sid || sc.id, path, depth, t: n.t, s: n.s || '', c: n.c || '', anc, kids: [], nt: gmNT(n.t)};
+        P.items.push(it); P.byId[it.id] = it;
+        if(anc.length) anc[anc.length - 1].kids.push(it);
+        (n.k || []).forEach((c, i) => walk(c, path + '.' + i, depth + 1, anc.concat([it])));
+      })(sc.tree, '0', 0, []);
+    }
+    if(sc.key) sc.key.forEach(([c, t, s], i) => { const it = {id: sc.id + '|' + i, kind:'key', sc: sc.id, sec: sc.id, t, s, c, anc: [], kids: [], depth: 1, nt: gmNT(t)}; P.items.push(it); P.byId[it.id] = it; });
+    if(sc.who) QL_TABLE.forEach((r, i) => r.slice(1).forEach((x, j) => { if(!x || x.trim() === '—') return;
+      const it = {id: sc.id + '|' + i + '.' + j, kind:'who', sc: sc.id, sec: sc.id, job: r[0], col: j, t: x, s: '', c: '', anc: [], kids: [], depth: 1, nt: gmNT(x)}; P.items.push(it); P.byId[it.id] = it; }));
+  });
+  // tập chữ của mọi nút con cháu (để tránh đáp án nhiễu trùng nghĩa)
+  P.items.slice().reverse().forEach(it => { it.dnt = new Set(); it.kids.forEach(k => { it.dnt.add(k.nt); k.dnt.forEach(x => it.dnt.add(x)); }); });
+  return P;
+}
+function gmBuildParts(){
+  const P = [];
+  P.push(gmMakePart('main', 'main', '📖 Soi chiếu & XNC', 'Câu hỏi lấy từ 5 sơ đồ: 1.1 XNC · ① Hành lý xách tay · ② Hành lý ký gửi ★ · ③ Khu cách ly · ④ Tình huống.',
+    SECTIONS.filter(s => s.map).map(s => ({id: s.id, chip: s.chip, tree: s.map}))));
+  if(typeof MAP_QL !== 'undefined') P.push(gmMakePart('ql', 'ql', '🏛️ Lĩnh vực quản lý ANHK', 'Câu hỏi lấy từ Nhớ nhanh · 17 lĩnh vực quản lý · bảng “Ai làm gì” · Liên hệ ca soi chiếu.',
+    [{id:'ql-key', chip:'Nhớ nhanh', key: QL_KEY}, {id:'ql', chip:'17 lĩnh vực', tree: MAP_QL}, {id:'ql-tbl', chip:'Ai làm gì', who: true}, {id:'ql-job', chip:'Liên hệ ca soi chiếu', key: QL_JOB}]));
+  if(typeof GT_TREES !== 'undefined') P.push(gmMakePart('gt', 'gt', '✈️ Bài học chung HK', 'Câu hỏi lấy từ Nhớ nhanh + 4 bài của Giáo trình AN-BHC Phần 1 (2023).',
+    [{id:'gt-key', chip:'Nhớ nhanh', key: GT_KEY}].concat(GT_TREES.map(t => ({id: t.id, chip: t.chip, tree: t.map})))));
+  if(typeof AN_TREES !== 'undefined') P.push(gmMakePart('an', 'an', '🛡️ Bài học chung ANHK', 'Câu hỏi lấy từ Nhớ nhanh + 7 bài của Giáo trình AN-BHC Phần 2 (2023).',
+    [{id:'an-key', chip:'Nhớ nhanh', key: AN_KEY}].concat(AN_TREES.map(t => ({id: t.id, chip: t.chip, tree: t.map})))));
+  return P;
+}
+const gmPart = () => GM_PARTS.find(p => p.id === GM.part) || GM_PARTS[0];
+const gmScopeItems = (P, sc) => P.items.filter(it => sc === 'all' || it.sc === sc);
+const gmChip = (P, sc) => (P.scopes.find(x => x.id === sc) || {}).chip || '';
+function gmCtx(it){ // đường dẫn ngắn: phạm vi › nhánh cấp 1 › … › cha
+  const P = gmPart();
+  if(it.kind === 'who') return gmChip(P, it.sc) + ' › ' + it.job;
+  const tr = it.anc.slice(1).map(a => gmCut(a.t, 46));
+  return [gmChip(P, it.sc)].concat(tr).join(' › ');
+}
+
+// ---- nguồn: tách đoạn Điều/khoản để so trùng ----
+function gmSegs(s){
+  return String(s).split(/;|,(?=\s*(?:Đ|L130|ND215|TT14|DM|XNC|B\d|[IVX]+\.))/).map(x => x.replace(/\b(L130|ND215|TT14|XNC-VN|XNC-NN|VBHN|DM)\b/g, '').toLowerCase().replace(/\s+/g, ' ').trim()).filter(Boolean);
+}
+function gmSegClash(a, b){
+  const pre = (x, y) => y.startsWith(x) && /^[.\s\-–a-zđ]/.test(y.slice(x.length));
+  return gmSegs(a).some(x => gmSegs(b).some(y => x === y || pre(x, y) || pre(y, x)));
+}
+
+// ---- sinh câu hỏi ----
+function gmTake(tiers, n, ok){
+  const out = [], seen = new Set();
+  for(const tier of tiers){ for(const x of gmShuf(tier)){ if(out.length >= n) return out; const key = x.nt != null ? x.nt : x; if(seen.has(key) || !ok(x)) continue; seen.add(key); out.push(x); } }
+  return out;
+}
+const GM_META = /^(mẹo nhớ|→)|tab ngôn ngữ|xem (hlxt|nhánh|⑤|④)|^trình tự chi tiết/i;
+const gmWords = t => new Set(gmNT(t).split(' ').filter(w => w.length > 1));
+function gmSim(a, b){ const A = gmWords(a), B = gmWords(b); if(!A.size || !B.size) return 0; let n = 0; A.forEach(w => { if(B.has(w)) n++; }); return n / Math.min(A.size, B.size); }
+const gmLeaves = it => it.kids.length ? it.kids.flatMap(gmLeaves) : [it];
+// chọn k đáp án đúng + (1,5k − k) đáp án sai
+function gmMC(base, okList, noPool, opt){
+  opt = opt || {};
+  const n = okList.length; if(!n) return null;
+  let k = opt.all ? n : Math.min(n, Math.max(Math.min(2, n), 2 + Math.floor(Math.random() * (Math.min(opt.max || 6, n) - 1))));
+  const need = x => Math.round(x * 1.5) - x;
+  while(k > 1 && need(k) > noPool.length) k--;
+  if(need(k) > noPool.length || need(k) < 1) return null;
+  const oks = gmShuf(okList).slice(0, k), nos = gmShuf(noPool).slice(0, need(k));
+  const opts = gmShuf(oks.map(h => ({html: h, ok: true})).concat(nos.map(h => ({html: h, ok: false}))));
+  return Object.assign({type:'mc', k, opts}, base);
+}
+// a) câu soạn sẵn (gm_bank.js)
+function gmBankQ(b){
+  const P = GM_PARTS.find(x => x.id === b.p); if(!P) return null;
+  const it = P.byId[b.sc + '|' + (b.j || '0')];
+  return gmMC({key: 'b:' + b.id, prompt: b.q, ctx: gmChip(P, b.sc), it, s: b.s,
+    full: b.ok.map(esc)}, b.ok.map(esc), (b.no || []).map(esc), {all: b.all, max: b.max});
+}
+// b) câu theo mục sơ đồ: “Nội dung nào thuộc «nhánh»?”
+function gmTreeOk(b){ return gmLeaves(b).filter(l => l !== b && !GM_META.test(gmPlain(l.t))); }
+function gmTreeQ(b, P){
+  if(b.kind !== 'node' || b.depth < 1 || !b.kids.length) return null;
+  const oks = gmTreeOk(b); if(oks.length < 2 || oks.length > 16) return null;
+  const inside = x => x === b || x.anc.some(a => a.id === b.id);
+  const okNT = new Set(oks.map(o => o.nt));
+  const good = x => x.kind === 'node' && !x.kids.length && x.depth >= 1 && !inside(x) && !okNT.has(x.nt) && !GM_META.test(gmPlain(x.t)) && !oks.some(o => gmSim(o.t, x.t) >= 0.6);
+  const par = b.anc[b.anc.length - 1];
+  const sib = par ? par.kids.filter(z => z !== b).flatMap(gmLeaves) : [];
+  const pool = gmTake([sib, P.items.filter(x => x.sc === b.sc), P.items], 12, good);
+  const clean = t => gmPlain(t).replace(/^[①-⑳]\s*|^[A-ZĐ]\.\s+|^\d+(\.\d+)*\.?\s+/, '');
+  let title = clean(b.t); if(title.length < 25 && par && par.depth >= 1) title = gmCut(clean(par.t), 60) + ' › ' + title;
+  const optT = t => hlb(String(t).replace(/^\d+(\.\d+)*\.?\s+(?=\S)|^[a-zđ]\)\s+/, ''), '');
+  const S = s => s ? ` <span class="src">${esc(s)}</span>` : '';
+  return gmMC({key: 't:' + b.id, prompt: `Nội dung nào thuộc mục «${esc(title)}»?`, ctx: gmCtx(b), it: b, s: b.s,
+    full: oks.map(o => hlb(o.t, '') + S(o.s))}, oks.map(o => optT(o.t)), pool.map(x => optT(x.t)), {max: 6});
+}
+// c) bảng “Ai làm gì” (phần 🏛️): “Việc nào do X làm?”
+function gmWhoQ(col, P){
+  const cells = P.items.filter(x => x.kind === 'who');
+  const lab = x => `<b>${esc(x.job)}:</b> ${esc(x.t)}`;
+  const oks = cells.filter(x => x.col === col), nos = cells.filter(x => x.col !== col);
+  return gmMC({key: 'w:' + col, prompt: `Trong bảng “Ai làm gì”, việc nào do <b>${esc(GM_WHO[col])}</b> làm?`, ctx: 'Ai làm gì', it: null, jumpSec: 'ql-tbl', s: '',
+    full: oks.map(lab)}, oks.map(lab), nos.map(lab), {max: 5});
+}
+const GEN = {
+  col(it, P){
+    if(!/^[rag]$/.test(it.c)) return null;
+    return {type:'col', key: 'c:' + it.id, it, prompt:'Ý này được tô màu gì?', quote: it.t, ctx: gmCtx(it), col:true,
+      opts: GM_COL.map(([c, l]) => ({html: l, ok: c === it.c, c}))};
+  }
+};
+function gmQuizCands(P, sc){ // [{gen:()=>q, key}]
+  const out = [];
+  if(GM.qt.includes('bank')) GM_BANK.filter(b => b.p === P.id && (sc === 'all' || b.sc === sc)).forEach(b => out.push({key: 'b:' + b.id, gen: () => gmBankQ(b)}));
+  if(GM.qt.includes('tree')){
+    gmScopeItems(P, sc).filter(it => it.kind === 'node' && it.depth >= 1 && it.kids.length).forEach(b => { const n = gmTreeOk(b).length; if(n >= 2 && n <= 16) out.push({key: 't:' + b.id, gen: () => gmTreeQ(b, P)}); });
+    if(P.id === 'ql' && (sc === 'all' || sc === 'ql-tbl')) [0, 1, 2].forEach(c => out.push({key: 'w:' + c, gen: () => gmWhoQ(c, P)}));
+  }
+  return out;
+}
+function gmFromKey(key, P){
+  const [t, id] = [key.slice(0, 1), key.slice(2)];
+  if(t === 'b'){ const b = GM_BANK.find(x => x.id === id); return b ? gmBankQ(b) : null; }
+  if(t === 't'){ const b = P.byId[id]; return b ? gmTreeQ(b, P) : null; }
+  if(t === 'w') return gmWhoQ(+id, P);
+  if(t === 'c'){ const it = P.byId[id]; return it ? GEN.col(it, P) : null; }
+  return null;
+}
+function gmCount(P, sc){
+  if(GM.mode === 'fc') return gmCards(P, sc).length;
+  if(GM.mode === 'col') return gmScopeItems(P, sc).filter(it => /^[rag]$/.test(it.c)).length;
+  return gmQuizCands(P, sc).length;
+}
+function gmMakeRound(P, sc, n, review){
+  const qs = [];
+  if(review){ review.forEach(w => { if(qs.length >= n) return; const q = gmFromKey(w.k, P); if(q) qs.push(q); }); return gmShuf(qs); }
+  if(GM.mode === 'col'){ // chọn đều 3 màu để không đoán mò được
+    const cands = gmScopeItems(P, sc).filter(it => /^[rag]$/.test(it.c)), used = new Set(); let tries = 0;
+    while(qs.length < n && tries++ < n * 40 && cands.length){
+      const cs = GM_COL.map(c => c[0]).filter(c => cands.some(x => x.c === c && !used.has(x.id))); if(!cs.length) break;
+      const c = gmPick(cs), it = gmPick(cands.filter(x => x.c === c && !used.has(x.id))); used.add(it.id);
+      const q = GEN.col(it, P); if(q) qs.push(q);
+    }
+    return qs;
+  }
+  // trắc nghiệm: ưu tiên câu soạn sẵn (≈ 60%) rồi câu theo mục sơ đồ, xáo trộn
+  const cands = gmShuf(gmQuizCands(P, sc)), bank = cands.filter(c => c.key[0] === 'b'), other = cands.filter(c => c.key[0] !== 'b');
+  const order = [];
+  while(bank.length || other.length){ const takeBank = bank.length && (!other.length || Math.random() < 0.6); order.push(takeBank ? bank.shift() : other.shift()); }
+  for(const c of order){ if(qs.length >= n) break; const q = c.gen(); if(q) qs.push(q); }
+  return gmShuf(qs);
+}
+
+// ---- thẻ ghi nhớ ----
+function gmCloze(t){
+  const raw = String(t);
+  if(raw.includes('**')){
+    const parts = raw.split('**'); const idx = parts.map((p, i) => i).filter(i => i % 2 && parts[i]);
+    const hide = new Set(gmShuf(idx).slice(0, 4));
+    return parts.map((p, i) => i % 2 && p ? (hide.has(i) ? '<span class="gm-blank">＿＿＿</span>' : `<b class="kb">${esc(p)}</b>`) : esc(p)).join('');
+  }
+  GM_NUM.lastIndex = 0;
+  return esc(raw).replace(GM_NUM, '$1<span class="gm-blank">＿＿</span>');
+}
+function gmHasNum(t){ GM_NUM.lastIndex = 0; const r = GM_NUM.test(gmPlain(t)); GM_NUM.lastIndex = 0; return r; }
+function gmCards(P, sc){
+  const cards = [];
+  gmScopeItems(P, sc).forEach(it => {
+    if(it.kind === 'node' && it.depth >= 1 && it.kids.length >= 2 && it.kids.length <= 14) cards.push({id: it.id + '|L', it, type:'list'});
+    if(it.kind !== 'who' && it.depth >= 1 && (/\*\*[^*]+\*\*/.test(it.t) || gmHasNum(it.t))) cards.push({id: it.id + '|C', it, type:'cloze'});
+    else if(it.kind === 'key' && it.s) cards.push({id: it.id + '|S', it, type:'src'});
+    if(it.kind === 'who') cards.push({id: it.id + '|W', it, type:'who'});
+  });
+  return cards;
+}
+function gmCardFront(cd){
+  const it = cd.it;
+  if(cd.type === 'list') return `<div class="gm-ctx">${esc(gmCtx(it))}</div><div class="gm-fq">Nhánh này gồm những ý nào? <span class="muted">(${it.kids.length} ý)</span></div><div class="gm-quote">${hlb(it.t, '')}</div>`;
+  if(cd.type === 'cloze') return `<div class="gm-ctx">${esc(gmCtx(it))}</div><div class="gm-fq">Điền chỗ trống:</div><div class="gm-quote">${gmCloze(it.t)}</div>`;
+  if(cd.type === 'src') return `<div class="gm-ctx">${esc(gmCtx(it))}</div><div class="gm-fq">Căn cứ ở đâu?</div><div class="gm-quote">${hlb(it.t, '')}</div>`;
+  return `<div class="gm-ctx">${esc(gmCtx(it))}</div><div class="gm-fq">${esc(GM_WHO[it.col])} làm gì?</div><div class="gm-quote"><b>${esc(it.job)}</b></div>`;
+}
+function gmCardBack(cd){
+  const it = cd.it, S = s => s ? `<span class="src">${esc(s)}</span>` : '';
+  if(cd.type === 'list') return `<ul class="gm-list">${it.kids.map(k => `<li class="${k.c || ''}">${hlb(k.t, '')} ${S(k.s)}</li>`).join('')}</ul>`;
+  if(cd.type === 'who') return `<div class="gm-quote">${esc(it.t)}</div>`;
+  return `<div class="gm-quote ${it.c || ''}">${hlb(it.t, '')} ${S(it.s)}</div>`;
+}
+
+// ---- giao diện ----
+function gmSettings(){ return gmGet('anhk_gm_set', {}); }
+function gmSaveSettings(){ const all = gmSettings(); all[GM.part] = {mode: GM.mode, scope: GM.scope}; all.qt = GM.qt; all.n = GM.n; gmSet('anhk_gm_set', all); }
+function gmLoadPart(pid){
+  const s = gmSettings(), mine = s[pid] || {};
+  GM.part = pid; GM.mode = mine.mode || 'quiz'; GM.scope = mine.scope || 'all';
+  const P = gmPart(); if(GM.scope !== 'all' && !P.scopes.some(x => x.id === GM.scope)) GM.scope = 'all';
+}
+function gmWrongs(){ return gmGet('anhk_gm_wr_' + GM.part, []).filter(w => w && (w.q === 'mc' || w.q === 'col') && /^[btwc]:/.test(w.k || '')); }
+function gmSaveWrongs(w){ gmSet('anhk_gm_wr_' + GM.part, w.slice(-200)); }
+function gmMastered(){ return new Set(gmGet('anhk_gm_fc_' + GM.part, [])); }
+
+function gmSetup(){
+  const P = gmPart();
+  const cnt = sc => gmCount(P, sc);
+  if(GM.scope !== 'all' && !cnt(GM.scope)) GM.scope = 'all';
+  const scopes = [{id:'all', chip:'Tất cả'}].concat(P.scopes);
+  const wr = gmWrongs().filter(w => (GM.mode === 'col') === (w.q === 'col'));
+  const best = gmGet('anhk_gm_best', {})[[GM.part, GM.mode, GM.scope].join('|')];
+  const mastered = gmMastered(), cards = GM.mode === 'fc' ? gmCards(P, GM.scope) : [];
+  const nm = cards.filter(c => mastered.has(c.id)).length;
+  const hint = {
+    quiz: 'Mỗi câu có NHIỀU đáp án đúng – đề bài ghi rõ phải chọn mấy đáp án; số lựa chọn = 1,5 × số đáp án đúng (VD 4 đúng → 6 lựa chọn). Bấm từng đáp án: hiện ngay đúng ✅ / sai ❌. Mỗi đáp án đúng +10, chọn sai −5; câu trọn vẹn (không chọn sai) được thưởng combo 🔥. Câu chưa trọn vẹn được lưu để ôn lại.',
+    col: 'Mỗi ý trong sơ đồ có màu: ĐỎ = cấm · VÀNG = có điều kiện / cần xử lý · XANH = được phép / thuận lợi. Chọn đúng màu của ý đó. Ba màu được chọn đều nhau nên không đoán mò được.',
+    fc: 'Đọc mặt trước, tự nhớ lại rồi bấm Lật thẻ (hoặc phím Space). Tự chấm Nhớ rồi / Chưa nhớ – thẻ chưa nhớ quay lại sau vài thẻ. Tiến độ được lưu trên máy.'
+  }[GM.mode];
+  const body = document.getElementById('gmbody');
+  body.innerHTML = `<div class="card spy" id="gm-set" data-name="Game › ${esc(P.name)}">
+    <h2>🎮 ${esc(P.name)}</h2><p class="desc">${esc(P.desc)} Chỉ dùng nội dung đã có trong tab 📚 Kiến thức.</p>
+    <div class="kwrow"><span class="lbl">Kiểu chơi:</span>${GM_MODES.map(([m, l]) => `<button class="kw${GM.mode === m ? ' on' : ''}" data-gmmode="${m}">${l}</button>`).join('')}</div>
+    <div class="kwrow"><span class="lbl">Phạm vi:</span>${scopes.map(s => { const n = cnt(s.id); return `<button class="kw${GM.scope === s.id ? ' on' : ''}" data-gmsc="${s.id}"${n ? '' : ' disabled'}>${esc(s.chip)}<span class="n">${n}</span></button>`; }).join('')}</div>
+    ${GM.mode === 'quiz' ? `<div class="kwrow"><span class="lbl">Dạng câu:</span>${GM_QT.map(q => `<button class="kw${GM.qt.includes(q.id) ? ' on' : ''}" data-gmqt="${q.id}">${q.label}</button>`).join('')}${P.id === 'ql' ? '<span class="muted gm-small">(“Ai làm gì” nằm trong dạng 🌳)</span>' : ''}</div>` : ''}
+    ${GM.mode !== 'fc' ? `<div class="kwrow"><span class="lbl">Số câu:</span>${[10, 20, 30].map(n => `<button class="kw${GM.n === n ? ' on' : ''}" data-gmn="${n}">${n}</button>`).join('')}</div>` : ''}
+    <p class="gm-hint">${hint}</p>
+    <div class="gm-start">
+      ${GM.mode === 'fc'
+        ? `<button class="gm-go" data-gmstart="fc">🃏 Lật thẻ (${cards.length - nm} chưa nhớ)</button><button class="btn" data-gmstart="fcall">Học lại cả ${cards.length} thẻ</button>
+           <span class="gm-stat">Đã nhớ <b>${nm}/${cards.length}</b></span><div class="gm-prog"><i style="width:${cards.length ? Math.round(nm / cards.length * 100) : 0}%"></i></div>`
+        : `<button class="gm-go" data-gmstart="play">▶ Bắt đầu</button>${wr.length ? `<button class="btn" data-gmstart="review">🔁 Ôn ${Math.min(wr.length, GM.n)} câu sai</button>` : ''}
+           <span class="gm-stat">${best != null ? `🏆 Kỷ lục: <b>${best}</b> điểm` : 'Chưa có kỷ lục'}${wr.length ? ` · ${wr.length} câu sai đang chờ ôn` : ''}</span>`}
+    </div></div>
+  <div id="gmplay"></div>`;
+  spy();
+}
+
+function gmStart(kind){
+  const P = gmPart();
+  if(kind === 'fc' || kind === 'fcall'){
+    const m = gmMastered(); let cards = gmCards(P, GM.scope);
+    if(kind === 'fc') cards = cards.filter(c => !m.has(c.id));
+    if(!cards.length){ gmPlayHTML(`<div class="card gm-end"><h2>🎉 Đã nhớ hết thẻ trong phạm vi này</h2><p>Bấm “Học lại cả … thẻ” để ôn lại từ đầu, hoặc chọn phạm vi khác.</p></div>`); return; }
+    GM.run = {kind:'fc', deck: gmShuf(cards), i: 0, flipped: false, ok: 0, again: 0};
+    gmCard(); return;
+  }
+  let qs;
+  if(kind === 'review'){ const wr = gmWrongs().filter(w => (GM.mode === 'col') === (w.q === 'col')); qs = gmMakeRound(P, 'all', GM.n, gmShuf(wr).slice(0, GM.n)); }
+  else qs = gmMakeRound(P, GM.scope, GM.n);
+  if(!qs.length){ gmPlayHTML(`<div class="card"><p>Phạm vi này chưa đủ dữ liệu để tạo câu hỏi kiểu này – hãy chọn phạm vi hoặc dạng câu khác.</p></div>`); return; }
+  GM.run = {kind: kind === 'review' ? 'review' : 'play', qs, i: 0, score: 0, combo: 0, maxc: 0, right: 0, wrong: [], answered: false};
+  gmQuestion();
+}
+function gmPlayHTML(h){ const el = document.getElementById('gmplay'); el.innerHTML = h; const top = el.getBoundingClientRect().top + window.scrollY - OFF() - 8; if(Math.abs(window.scrollY - top) > 40) window.scrollTo({top, behavior:'smooth'}); }
+function gmHud(){
+  const R = GM.run, n = R.qs.length;
+  return `<div class="gm-hud"><span class="pill">Câu ${R.i + 1}/${n}</span><span class="pill">⭐ ${R.score}</span><span class="pill${R.combo >= 2 ? ' hot' : ''}">🔥 ${R.combo}</span>${R.kind === 'review' ? '<span class="pill">🔁 Ôn câu sai</span>' : ''}<button class="btn gm-quit" data-gmquit="1">✕ Dừng</button></div>
+    <div class="gm-prog"><i style="width:${Math.round(R.i / n * 100)}%"></i></div>`;
+}
+function gmQuestion(){
+  const R = GM.run, q = R.qs[R.i]; R.answered = false; R.found = 0; R.bad = 0; R.reveal = false;
+  const head = q.type === 'mc'
+    ? `<div class="gm-fq">${q.prompt}</div><div class="gm-need">Chọn đủ <b>${q.k}</b> đáp án đúng <span class="muted">· ${q.opts.length} lựa chọn</span><span class="gm-cnt" id="gmcnt">Đã chọn đúng 0/${q.k}</span></div>`
+    : `<div class="gm-fq">${q.prompt}</div><div class="gm-quote">${hlb(q.quote, '')}</div>`;
+  gmPlayHTML(`<div class="card gm-card">${gmHud()}
+    <div class="gm-ctx">${esc(q.ctx || '')}</div>${head}
+    <div class="gm-opts${q.col ? ' col' : ''}">${q.opts.map((o, i) => `<button class="gm-opt${o.c ? ' c' + o.c : ''}" data-gmans="${i}"><span class="k">${i + 1}</span><span class="v">${o.html}</span><span class="mk"></span></button>`).join('')}</div>
+    ${q.type === 'mc' ? '<div class="gm-nav" id="gmgive"><button class="btn" data-gmgive="1">🙈 Hiện đáp án</button></div>' : ''}
+    <div id="gmexp"></div></div>`);
+}
+function gmJumpBtn(q){ const id = q.jumpSec || (q.it ? q.it.id : ''); return id ? `<button class="btn" data-gmjump="${esc(id)}">📍 Xem trong sơ đồ</button>` : ''; }
+function gmExplain(q){
+  const it = q.it, S = s => s ? `<span class="src">${esc(s)}</span>` : '';
+  let h = '';
+  if(q.type === 'col') h = `<div class="res ${it.c}"><span class="stt ${it.c}">${GM_COLNAME[it.c]}</span> ${hlb(it.t, '')} ${S(it.s)}</div>`;
+  else h = `<div class="gm-xl">Đáp án đúng đầy đủ (${q.full.length} ý)${q.s ? ' · căn cứ ' + S(q.s) : ''}:</div><ul class="gm-list ok">${q.full.map(x => `<li>${x}</li>`).join('')}</ul>`;
+  return h + `<div class="gm-nav">${gmJumpBtn(q)}<button class="gm-go" data-gmnext="1">${GM.run.i + 1 < GM.run.qs.length ? 'Câu tiếp ›' : 'Xem kết quả ›'}</button></div>`;
+}
+function gmFinishQ(perfect){
+  const R = GM.run, q = R.qs[R.i]; R.answered = true;
+  const btns = document.querySelectorAll('#gmplay .gm-opt');
+  btns.forEach((b, j) => { b.disabled = true; if(q.opts[j].ok && !b.classList.contains('ok')) b.classList.add('miss'); else if(!q.opts[j].ok && !b.classList.contains('bad')) b.classList.add('dim'); });
+  const give = document.getElementById('gmgive'); if(give) give.remove();
+  let wr = gmWrongs(); const key = {k: q.key, q: q.type};
+  if(perfect){ R.combo++; R.maxc = Math.max(R.maxc, R.combo); R.right++; R.score += Math.min(R.combo - 1, 5) * 2; wr = wr.filter(w => w.k !== key.k); }
+  else { R.combo = 0; R.wrong.push(q); if(!wr.some(w => w.k === key.k)) wr.push(key); }
+  gmSaveWrongs(wr);
+  const hud = document.querySelector('#gmplay .gm-hud'); if(hud){ const tmp = document.createElement('div'); tmp.innerHTML = gmHud(); hud.replaceWith(tmp.firstElementChild); }
+  const msg = q.type === 'col' ? (perfect ? '✅ Chính xác!' : '❌ Chưa đúng – xem lại ý gốc:')
+    : perfect ? (R.combo >= 3 ? `✅ Trọn vẹn! Combo ${R.combo} 🔥` : '✅ Trọn vẹn – không chọn sai đáp án nào!')
+    : R.reveal ? `🙈 Đã hiện đáp án (tìm được ${R.found}/${q.k}) – đọc lại nhé:` : `⚠️ Đủ ${q.k} đáp án đúng nhưng chọn sai ${R.bad} lần – xem lại:`;
+  const exp = document.getElementById('gmexp');
+  exp.innerHTML = `<div class="gm-fb ${perfect ? 'ok' : 'bad'}">${msg}</div>` + gmExplain(q);
+  const nx = exp.querySelector('[data-gmnext]'); if(nx) nx.focus({preventScroll: true});
+  const r = exp.getBoundingClientRect(); if(r.top > window.innerHeight - 80) window.scrollBy({top: Math.min(r.bottom - window.innerHeight + 16, r.top - OFF() - 8), behavior:'smooth'});
+}
+function gmAnswer(i){
+  const R = GM.run; if(!R || R.kind === 'fc' || R.answered) return;
+  const q = R.qs[R.i], o = q.opts[i]; if(!o) return;
+  const b = document.querySelectorAll('#gmplay .gm-opt')[i]; if(!b || b.disabled) return;
+  if(q.type === 'col'){
+    document.querySelectorAll('#gmplay .gm-opt').forEach((x, j) => { if(q.opts[j].ok) x.classList.add('ok'); else if(j === i) x.classList.add('bad'); });
+    if(o.ok){ R.score += 10; } return gmFinishQ(o.ok);
+  }
+  b.disabled = true;
+  if(o.ok){ b.classList.add('ok'); b.querySelector('.mk').textContent = '✅'; R.found++; R.score += 10; }
+  else { b.classList.add('bad', 'shake'); b.querySelector('.mk').textContent = '❌'; R.bad++; R.score = Math.max(0, R.score - 5); }
+  const c = document.getElementById('gmcnt'); if(c) c.innerHTML = `Đã chọn đúng ${R.found}/${q.k}${R.bad ? ` · sai ${R.bad}` : ''}`;
+  const hud = document.querySelector('#gmplay .gm-hud'); if(hud){ const tmp = document.createElement('div'); tmp.innerHTML = gmHud(); hud.replaceWith(tmp.firstElementChild); }
+  if(R.found >= q.k) gmFinishQ(R.bad === 0);
+}
+function gmGiveUp(){ const R = GM.run; if(!R || R.answered || R.kind === 'fc') return; R.reveal = true; gmFinishQ(false); }
+function gmNext(){
+  const R = GM.run; if(!R || !R.answered) return;
+  R.i++; if(R.i < R.qs.length) return gmQuestion();
+  // kết thúc
+  const n = R.qs.length, pct = Math.round(R.right / n * 100);
+  const bk = [GM.part, GM.mode, GM.scope].join('|'), best = gmGet('anhk_gm_best', {});
+  let rec = false; if(R.kind === 'play' && R.score > 0 && (best[bk] == null || R.score > best[bk])){ best[bk] = R.score; gmSet('anhk_gm_best', best); rec = true; }
+  const medal = pct === 100 ? '🏆' : pct >= 80 ? '🥇' : pct >= 60 ? '🥈' : '📘';
+  const S = s => s ? ` <span class="src">${esc(s)}</span>` : '';
+  const wrongHTML = q => q.type === 'col'
+    ? `<div class="res ${q.it.c || ''}"><div class="path">${esc(gmCtx(q.it))}</div>${hlb(q.it.t, '')}${S(q.it.s)} <span class="stt ${q.it.c}">${GM_COLNAME[q.it.c]}</span><br>${gmJumpBtn(q).replace('class="btn"', 'class="btn go"')}</div>`
+    : `<div class="res"><div class="path">${esc(q.ctx || '')}</div><b>${q.prompt}</b>${S(q.s)}<ul class="gm-list ok">${q.full.map(x => `<li>${x}</li>`).join('')}</ul>${gmJumpBtn(q).replace('class="btn"', 'class="btn go"')}</div>`;
+  gmPlayHTML(`<div class="card gm-end"><h2>${medal} Kết quả: ${R.right}/${n} câu ${GM.mode === 'col' ? 'đúng' : 'trọn vẹn'} (${pct}%)</h2>
+    <div class="gm-hud"><span class="pill">⭐ ${R.score} điểm</span><span class="pill">🔥 Combo cao nhất ${R.maxc}</span>${rec ? '<span class="pill hot">🎉 Kỷ lục mới!</span>' : ''}</div>
+    ${R.wrong.length ? `<h3 class="gm-h3">Các câu chưa trọn vẹn – đọc lại đáp án đầy đủ</h3>${R.wrong.map(wrongHTML).join('')}` : '<p>Không sai câu nào – tuyệt vời! 👏</p>'}
+    <div class="gm-nav"><button class="gm-go" data-gmstart="play">▶ Chơi lượt mới</button>${R.wrong.length ? `<button class="btn" data-gmstart="review">🔁 Ôn lại ${R.wrong.length} câu sai</button>` : ''}<button class="btn" data-gmquit="1">⚙ Đổi phạm vi</button></div></div>`);
+  GM.run = null; gmRefreshStat();
+}
+function gmRefreshStat(){ // cập nhật dòng kỷ lục / số câu sai mà không xoá kết quả đang hiện
+  const play = document.getElementById('gmplay').innerHTML; gmSetup(); document.getElementById('gmplay').innerHTML = play;
+}
+// ---- lật thẻ ----
+function gmCard(){
+  const R = GM.run, cd = R.deck[R.i]; R.flipped = false;
+  const m = gmMastered(), all = gmCards(gmPart(), GM.scope), total = all.length, nm = all.filter(c => m.has(c.id)).length;
+  gmPlayHTML(`<div class="card gm-card"><div class="gm-hud"><span class="pill">Thẻ ${R.i + 1}/${R.deck.length}</span><span class="pill">✅ ${R.ok}</span><span class="pill">🔁 ${R.again}</span><span class="pill">Đã nhớ ${nm}/${total}</span><button class="btn gm-quit" data-gmquit="1">✕ Dừng</button></div>
+    <div class="gm-prog"><i style="width:${Math.round(R.i / R.deck.length * 100)}%"></i></div>
+    <div class="gm-flip" data-gmflip="1" tabindex="0" role="button" aria-label="Lật thẻ">
+      <div class="gm-face">${gmCardFront(cd)}</div>
+      <div class="gm-back" hidden><div class="gm-fq">Đáp án</div>${gmCardBack(cd)}</div>
+      <div class="gm-tap">👆 Chạm để lật thẻ</div>
+    </div>
+    <div class="gm-nav" id="gmfcbtn"><button class="gm-go" data-gmflip="1">🔄 Lật thẻ</button></div></div>`);
+}
+function gmFlip(){
+  const R = GM.run; if(!R || R.kind !== 'fc' || R.flipped) return; R.flipped = true;
+  const cd = R.deck[R.i];
+  document.querySelector('#gmplay .gm-back').hidden = false; document.querySelector('#gmplay .gm-tap').hidden = true;
+  document.querySelector('#gmplay .gm-flip').classList.add('on');
+  if(cd.type === 'cloze') document.querySelector('#gmplay .gm-face .gm-quote').innerHTML = hlb(cd.it.t, '');
+  document.getElementById('gmfcbtn').innerHTML = `<button class="gm-opt cg gm-self" data-gmself="1">✅ Nhớ rồi <span class="k">1</span></button><button class="gm-opt cr gm-self" data-gmself="0">🔁 Chưa nhớ <span class="k">2</span></button><button class="btn" data-gmjump="${esc(cd.it.kind === 'who' ? 'ql-tbl' : cd.it.id)}">📍 Xem trong sơ đồ</button>`;
+}
+function gmSelf(ok){
+  const R = GM.run; if(!R || R.kind !== 'fc' || !R.flipped) return;
+  const cd = R.deck[R.i], m = gmMastered();
+  if(ok){ R.ok++; m.add(cd.id); } else { R.again++; m.delete(cd.id); R.deck.splice(Math.min(R.i + 4, R.deck.length), 0, cd); }
+  gmSet('anhk_gm_fc_' + GM.part, [...m]);
+  R.i++;
+  if(R.i < R.deck.length) return gmCard();
+  gmPlayHTML(`<div class="card gm-end"><h2>🎉 Xong lượt lật thẻ</h2><div class="gm-hud"><span class="pill">✅ Nhớ ${R.ok}</span><span class="pill">🔁 Lật lại ${R.again}</span></div>
+    <div class="gm-nav"><button class="gm-go" data-gmstart="fc">🃏 Lượt tiếp (thẻ chưa nhớ)</button><button class="btn" data-gmquit="1">⚙ Đổi phạm vi</button></div></div>`);
+  GM.run = null; gmRefreshStat();
+}
+
+// ---- nhảy sang sơ đồ trong tab Kiến thức ----
+function gmJump(id){
+  const P = gmPart(); showTab('kt'); showKV(P.kv);
+  document.getElementById('gmback').hidden = false;
+  const it = P.byId[id];
+  if(!it || it.kind !== 'node'){ const sec = it ? it.sec : id; goTo(sec); const el = document.getElementById(sec);
+    if(el && it && it.kind === 'key'){ const r = el.querySelectorAll('.res')[+it.id.split('|')[1]]; if(r){ r.classList.add('flash-src'); setTimeout(() => r.classList.remove('flash-src'), 2600); setTimeout(() => window.scrollTo({top: r.getBoundingClientRect().top + window.scrollY - OFF() - 8, behavior:'smooth'}), 60); } }
+    return; }
+  const cardId = it.sid === 'ql' ? 'ql-map' : it.sid, card = document.getElementById(cardId);
+  const inp = card && card.querySelector('input');
+  if(inp && inp.value){ inp.value = ''; inp.dispatchEvent(new Event('input', {bubbles: true})); }
+  const li = document.getElementById(`n-${it.sid}-${it.path}`); if(!li) return goTo(cardId);
+  let el = li.parentElement; while(el && el !== card){ if(el.tagName === 'DETAILS') el.open = true; el = el.parentElement; }
+  const own = li.querySelector(':scope>details'); if(own) own.open = true;
+  li.classList.add('flash'); setTimeout(() => li.classList.remove('flash'), 2600);
+  requestAnimationFrame(() => window.scrollTo({top: li.getBoundingClientRect().top + window.scrollY - OFF() - 6, behavior:'smooth'}));
+}
+
+function gmShowPart(pid){
+  if(GM.part === pid && document.getElementById('gm-set')) return;
+  gmLoadPart(pid); GM.run = null; store.set('anhk_gp', pid);
+  document.querySelectorAll('.gp').forEach(b => b.classList.toggle('on', b.dataset.gp === pid));
+  gmSetup();
+  if(curTab() === 'gm'){ const head = document.querySelector('header').offsetHeight; if(window.scrollY > head) window.scrollTo({top: head}); }
+}
+function buildGM(){
+  const body = document.getElementById('gmbody'); if(!body) return;
+  GM_PARTS = gmBuildParts();
+  const s = gmSettings();
+  GM = {part: 'main', mode: 'quiz', scope: 'all', qt: Array.isArray(s.qt) && s.qt.some(x => GM_QT.some(q => q.id === x)) ? s.qt.filter(x => GM_QT.some(q => q.id === x)) : ['bank', 'tree'], n: s.n || 10, run: null};
+  const saved = store.get('anhk_gp'); gmLoadPart(GM_PARTS.some(p => p.id === saved) ? saved : 'main');
+  document.querySelectorAll('.gp').forEach(b => { b.classList.toggle('on', b.dataset.gp === GM.part); b.addEventListener('click', () => gmShowPart(b.dataset.gp)); });
+  gmSetup();
+  body.addEventListener('click', e => {
+    const b = e.target.closest('button,[data-gmflip]'); if(!b || b.disabled) return; const d = b.dataset;
+    if(d.gmmode){ GM.mode = d.gmmode; GM.run = null; gmSaveSettings(); gmSetup(); return; }
+    if(d.gmsc){ GM.scope = d.gmsc; GM.run = null; gmSaveSettings(); gmSetup(); return; }
+    if(d.gmqt){ const has = GM.qt.includes(d.gmqt); if(has && GM.qt.length === 1) return; GM.qt = has ? GM.qt.filter(x => x !== d.gmqt) : GM.qt.concat([d.gmqt]); GM.run = null; gmSaveSettings(); gmSetup(); return; }
+    if(d.gmn){ GM.n = +d.gmn; gmSaveSettings(); gmSetup(); return; }
+    if(d.gmstart) return gmStart(d.gmstart);
+    if(d.gmans != null) return gmAnswer(+d.gmans);
+    if(d.gmnext) return gmNext();
+    if(d.gmgive) return gmGiveUp();
+    if(d.gmflip) return gmFlip();
+    if(d.gmself != null) return gmSelf(d.gmself === '1');
+    if(d.gmjump) return gmJump(d.gmjump);
+    if(d.gmquit){ GM.run = null; gmSetup(); const el = document.getElementById('gm-set'); window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - OFF() - 8, behavior:'smooth'}); }
+  });
+  document.addEventListener('keydown', e => {
+    if(curTab() !== 'gm' || !GM.run || e.metaKey || e.ctrlKey || e.altKey || /INPUT|TEXTAREA|SELECT/.test((e.target.tagName || ''))) return;
+    const R = GM.run;
+    if(R.kind === 'fc'){
+      if(!R.flipped && (e.key === ' ' || e.key === 'Enter')){ e.preventDefault(); gmFlip(); }
+      else if(R.flipped && (e.key === '1' || e.key === '2')){ e.preventDefault(); gmSelf(e.key === '1'); }
+      return;
+    }
+    if(!R.answered && /^[1-9]$/.test(e.key)){ e.preventDefault(); gmAnswer(+e.key - 1); }
+    else if(R.answered && (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowRight')){ e.preventDefault(); gmNext(); }
+  });
+  const back = document.getElementById('gmback');
+  back.addEventListener('click', () => { back.hidden = true; showTab('gm'); });
+  document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => { if(t.dataset.tab === 'gm') back.hidden = true; }));
+}
+
 // ===== RENDER =====
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const norm = s => String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/đ/g,'d');
@@ -3363,7 +4193,7 @@ function spy(){
 window.addEventListener('scroll', () => { if(!spyTick){ spyTick = true; requestAnimationFrame(() => { spyTick = false; spy(); }); } }, {passive:true});
 window.addEventListener('resize', spy);
 
-buildKT(); if(typeof buildQL==='function') buildQL(); if(typeof buildGT==='function') buildGT(); if(typeof buildAN==='function') buildAN(); buildVocab(''); buildPhrases(); buildDescVocab(); if(typeof buildTL==='function') buildTL();
+buildKT(); if(typeof buildQL==='function') buildQL(); if(typeof buildGT==='function') buildGT(); if(typeof buildAN==='function') buildAN(); buildVocab(''); buildPhrases(); buildDescVocab(); if(typeof buildTL==='function') buildTL(); if(typeof buildGM==='function') buildGM();
 // ---- tab con trong Kiến thức: 📖 Soi chiếu & XNC / 🏛️ Lĩnh vực quản lý ANHK ----
 const kvPos = {};
 function curKV(){ const b = document.querySelector('.kv.on'); return b ? b.dataset.kv : 'main'; }
